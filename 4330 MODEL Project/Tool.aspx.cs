@@ -14,4 +14,15 @@ namespace _4330_MODEL_Project
 
         }
     }
+
+    public class AssessmentTool
+    {
+        public double jobWaitTime;
+        public double queueLength;
+        public int jobsNotAddressed;
+        public double percentQueueEmpty;
+        public double techHoursIdle;
+
+
+    }
 }
