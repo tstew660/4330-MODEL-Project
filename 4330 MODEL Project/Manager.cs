@@ -125,21 +125,7 @@ namespace _4330_MODEL_Project
 
     
 
-    public class Queue
-    {
-        public int length;
-
-        public void sortBy()
-        {
-
-        }
-
-        public void displayTickets()
-        {
-
-        }
-
-    }
+    
 
     public class GenerateReport
     {
@@ -151,50 +137,7 @@ namespace _4330_MODEL_Project
 
     
 
-    public class Ticket
-    {
-        public String description;
-        public Customer owner;
-        public int difficulty;
-        public String status;
-        public String submittedBy;
-        public double hours;
-
-        public Ticket(String description1, Customer owner1, int difficulty1, String status1, String submittedBy1, double hours1)
-        {
-            description = description1;
-            owner = owner1;
-            difficulty = difficulty1;
-            status = status1;
-            submittedBy = submittedBy1;
-            hours = hours1;
-        }
-
-        public void creationTimeStamp()
-        {
-
-        }
-
-        public void beginingTimeStamp()
-        {
-
-        }
-
-        public void submit()
-        {
-
-        }
-
-        public void begin()
-        {
-
-        }
-
-        public void close()
-        {
-
-        }
-    }
+    
 
     
 }

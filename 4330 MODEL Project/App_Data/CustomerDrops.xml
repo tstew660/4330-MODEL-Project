@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CustomerDrop>
+	
+		<Status value="open"/>
+		<Status value="closed"/>
+	
+	
+		<Difficulty value="0"/>
+		<Difficulty value="1"/>
+		<Difficulty value="2"/>
+		<Difficulty value="3"/>
+		<Difficulty value="4"/>
+		<Difficulty value="5"/>
+	
+</CustomerDrop>

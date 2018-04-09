@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queue>
+	<Ticket descrpition="Network overhaul" owner="Sam's Company" difficulty="2" status="Open" submittedBy="Ronald Smith" hours="6"/>
+	<Ticket descrpition="Change wiring" owner="Bob's Company" difficulty="5" status="Open" submittedBy="Ronald Smith" hours="10"/>
+	<Ticket descrpition="New PCs" owner="Jim's Company" difficulty="1" status="Open" submittedBy="Gerald Thompson" hours="5"/>
+	<Ticket descrpition="IT software installation" owner="Sam's Company" difficulty="4" status="Open" submittedBy="Jane Doe" hours="2"/>
+	<Ticket descrpition="Check network speeed" owner="Jill's Company" difficulty="2" status="Open" submittedBy="Emily Smith" hours="1"/>
+</Queue>

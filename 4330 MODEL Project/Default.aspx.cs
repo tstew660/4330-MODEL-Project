@@ -16,4 +16,22 @@ namespace _4330_MODEL_Project
 
         
     }
+
+    public class Queue
+    {
+        public int length;
+
+        public void sortBy()
+        {
+
+        }
+
+        public void displayTickets()
+        {
+
+        }
+
+    }
+
+
 }
