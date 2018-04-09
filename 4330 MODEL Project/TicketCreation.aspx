@@ -22,7 +22,7 @@
     <p>Select Technician</p>
     <div>
         
-     <asp:DropDownList runat="server" ID="Technician" DataSourceID="Techs" DataTextField="name" DataValueField="ID"  OnDataBound="insertInitialTech"></asp:DropDownList>
+     <asp:DropDownList runat="server" ID="Technician" DataSourceID="Techs" DataTextField="name" DataValueField="name"  OnDataBound="insertInitialTech"></asp:DropDownList>
         <asp:XmlDataSource ID="Techs" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
         </div>
     &nbsp;
@@ -37,6 +37,9 @@
        
     <asp:TextBox runat="server" ID="Description"></asp:TextBox>
         </div>
+    &nbsp;
+
+    <asp:Button runat="server" Text="Submit" OnCommand="custSubmit"></asp:Button>
     
     <asp:XmlDataSource ID="Customers" runat="server" DataFile="~/Customer.xml"></asp:XmlDataSource>
 

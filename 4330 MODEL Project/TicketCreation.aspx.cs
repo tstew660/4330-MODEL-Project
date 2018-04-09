@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace _4330_MODEL_Project
 {
@@ -13,16 +14,16 @@ namespace _4330_MODEL_Project
         protected void Page_Load(object sender, EventArgs e)
         {
             Difficulty.Items.Insert(0, new ListItem("Select Job Difficulty", ""));
-            Difficulty.Items.Insert(1, new ListItem("0", ""));
-            Difficulty.Items.Insert(2, new ListItem("1", ""));
-            Difficulty.Items.Insert(3, new ListItem("2", ""));
-            Difficulty.Items.Insert(4, new ListItem("3", ""));
-            Difficulty.Items.Insert(5, new ListItem("4", ""));
-            Difficulty.Items.Insert(6, new ListItem("5", ""));
+            Difficulty.Items.Insert(1, new ListItem("0", "0"));
+            Difficulty.Items.Insert(2, new ListItem("1", "1"));
+            Difficulty.Items.Insert(3, new ListItem("2", "2"));
+            Difficulty.Items.Insert(4, new ListItem("3", "3"));
+            Difficulty.Items.Insert(5, new ListItem("4", "4"));
+            Difficulty.Items.Insert(6, new ListItem("5", "5"));
 
             Status.Items.Insert(0, new ListItem("Select a Ticket Status", ""));
-            Status.Items.Insert(1, new ListItem("Open", ""));
-            Status.Items.Insert(2, new ListItem("Closed", ""));
+            Status.Items.Insert(1, new ListItem("Open", "Open"));
+            Status.Items.Insert(2, new ListItem("Closed", "Closed"));
 
             
 
@@ -43,9 +44,23 @@ namespace _4330_MODEL_Project
             Technician.Items.Insert(0, new ListItem("Select a Technician", ""));
         }
 
+        protected void custSubmit(object sender, EventArgs e)
+        {
+            
+            var library = XElement.Load("C:\\Users\\Tyler Stewart\\source\\repos\\4330 MODEL Project\\4330 MODEL Project\\Tickets.xml");
+            library.Add(new XElement("Ticket",
+            new XAttribute("description", Description.Text),
+            new XAttribute("owner", Owner.Text),
+            new XAttribute("difficulty", Difficulty.Text),
+            new XAttribute("status", Status.Text),
+            new XAttribute("submittedBy", Technician.Text),
+            new XAttribute("hours", Hours.Text)));
+            library.Save("C:\\Users\\Tyler Stewart\\source\\repos\\4330 MODEL Project\\4330 MODEL Project\\Tickets.xml");
+        }
+
 
     }
-    public class Ticket
+   /* public class Ticket
     {
         public String description;
         public Customer owner;
@@ -88,5 +103,5 @@ namespace _4330_MODEL_Project
         {
 
         }
-    }
+    }*/
 }
