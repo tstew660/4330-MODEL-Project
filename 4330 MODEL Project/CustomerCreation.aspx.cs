@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace _4330_MODEL_Project
 {
-    public partial class _Default : Page
+    public partial class CustomerCreation : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        
+        }
     }
 }
