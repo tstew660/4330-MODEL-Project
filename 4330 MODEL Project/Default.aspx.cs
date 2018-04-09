@@ -11,9 +11,7 @@ namespace _4330_MODEL_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        
+        }
     }
 }

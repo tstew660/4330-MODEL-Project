@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Customers>
-	<Customer1 name="Bob's Company" address="1234 sample st." priority="1" jobCount="0"></Customer1>
-	<Customer2 name="Jim's Company" address="567 Test st." priority="5" jobCount="4"></Customer2>
-	<Customer3 name="Jill's Company" address="146 Wow st." priority="2" jobCount="2"></Customer3>
-	<Customer4 name="Sam's Company" address="478 oak st." priority="3" jobCount="5"></Customer4>
-	
-</Customers>
