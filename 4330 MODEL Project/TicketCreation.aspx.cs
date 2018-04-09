@@ -46,16 +46,45 @@ namespace _4330_MODEL_Project
 
         protected void custSubmit(object sender, EventArgs e)
         {
-            
-            var library = XElement.Load("C:\\Users\\Tyler Stewart\\source\\repos\\4330 MODEL Project\\4330 MODEL Project\\Tickets.xml");
-            library.Add(new XElement("Ticket",
-            new XAttribute("description", Description.Text),
-            new XAttribute("owner", Owner.Text),
-            new XAttribute("difficulty", Difficulty.Text),
-            new XAttribute("status", Status.Text),
-            new XAttribute("submittedBy", Technician.Text),
-            new XAttribute("hours", Hours.Text)));
-            library.Save("C:\\Users\\Tyler Stewart\\source\\repos\\4330 MODEL Project\\4330 MODEL Project\\Tickets.xml");
+            if (Description.Text == String.Empty ||
+            Owner.SelectedIndex == 0 ||
+            Difficulty.SelectedIndex == 0 ||
+            Status.SelectedIndex == 0 ||
+            Technician.SelectedIndex == 0 ||
+            Hours.Text == String.Empty)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "popDeny()", true);
+            }
+            else {
+                var library = XElement.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+                library.Add(new XElement("Ticket",
+                new XAttribute("description", Description.Text),
+                new XAttribute("owner", Owner.Text),
+                new XAttribute("difficulty", Difficulty.Text),
+                new XAttribute("status", Status.Text),
+                new XAttribute("submittedBy", Technician.Text),
+                new XAttribute("hours", Hours.Text)));
+                try
+                {
+                    library.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+                }
+                catch 
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "popDeny()", true);
+                }
+                resetFields();
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "popConfirm()", true);
+            }
+        }
+
+        private void resetFields()
+        {
+            Description.Text = String.Empty;
+            Owner.SelectedIndex = 0;
+            Difficulty.SelectedIndex = 0;
+            Status.SelectedIndex = 0;
+            Technician.SelectedIndex = 0;
+            Hours.Text = String.Empty;
         }
 
 

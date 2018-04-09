@@ -6,4 +6,5 @@
   <Ticket descrpition="IT software installation" owner="Sam's Company" difficulty="4" status="Open" submittedBy="Jane Doe" hours="2" />
   <Ticket descrpition="Check network speeed" owner="Jill's Company" difficulty="2" status="Open" submittedBy="Emily Smith" hours="1" />
   <Ticket description="Test description" owner="Jill's Company" difficulty="2" status="Open" submittedBy="Gerald Thompson" hours="4" />
+  <Ticket description="LAN" owner="Jim's Company" difficulty="3" status="Open" submittedBy="Emily Smith" hours="20" />
 </Queue>

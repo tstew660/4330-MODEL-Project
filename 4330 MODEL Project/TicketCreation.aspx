@@ -1,5 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TicketCreation.aspx.cs" Inherits="_4330_MODEL_Project.TicketCreation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script>
+        function popConfirm()
+        {
+            alert("Ticket has been successfully created");
+        }
+        function popDeny()
+        {
+            alert("Ticket could not be created");
+        }
+    </script>
     &nbsp;
     <p>Select Customer</p>
     <div>
