@@ -21,7 +21,13 @@ namespace _4330_MODEL_Project
             XmlElement el = (XmlElement)ticket.SelectSingleNode(query);
             
             
-             = getCustJobCount(el);
+             
+
+            TableRow row = new TableRow();
+            TableCell priorityCell = new TableCell();
+            priorityCell.Text = getCustJobCount(el);
+            row.Cells.Add(priorityCell);
+            Queue.Rows.Add(row);
         }
 
         protected String getCustJobCount(XmlElement ticketOwner)
