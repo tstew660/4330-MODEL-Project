@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="_4330_MODEL_Project._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:XmlDataSource ID="Ticks" runat="server" DataFile="~/Tickets.xml"></asp:XmlDataSource>
     <script>
        /**  function insertTicket()
         {
@@ -19,7 +18,7 @@
 
     </script>
 
-    <asp:Table runat="server" ID="Queue" DataSourceID="Ticks">
+    <asp:Table runat="server" ID="Queue">
         <asp:TableRow ID="HeaderRow" runat="server" Font-Bold="True" HorizontalAlign="Center" VerticalAlign="Bottom">
             <asp:TableCell runat="server" ID="Priority" Text="Priority" />
             <asp:TableCell runat="server" ID="Owmer" Text="Owner" />

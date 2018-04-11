@@ -10,13 +10,13 @@
         }
     </script>
     &nbsp;
-    <p>CompanyName</p>
+    <p>Company Name</p>
     <div>
         
     <asp:TextBox runat="server" ID="CompanyName"></asp:TextBox>
         </div>
     &nbsp;
-    <p>CompanyAddress</p>
+    <p>Company Address</p>
     <div>
        
     <asp:TextBox runat="server" ID="CompanyAddress"></asp:TextBox>

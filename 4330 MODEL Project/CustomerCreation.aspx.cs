@@ -27,10 +27,10 @@ namespace _4330_MODEL_Project
             {
                 var library = XElement.Load(HttpContext.Current.Server.MapPath("~/Customer.xml"));
                 library.Add(new XElement("Customer",
-                new XAttribute("CompanyName", CompanyName.Text),
-                new XAttribute("CompanyAddress", CompanyAddress.Text),
-                new XAttribute(name: "priority", value: 0),
-                new XAttribute(name: "jobCount", value: 0)));
+                new XAttribute("name", CompanyName.Text),
+                new XAttribute("address", CompanyAddress.Text),
+                new XAttribute("priority", "0"),
+                new XAttribute("jobCount", "0")));
                 try
                 {
                     library.Save(HttpContext.Current.Server.MapPath("~/Customer.xml"));
