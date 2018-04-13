@@ -53,6 +53,10 @@ namespace _4330_MODEL_Project
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "popDeny()", true);
             }
             else {
+                XmlDocument tickets = new XmlDocument();
+                tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+                XmlNodeList nodes = tickets.SelectSingleNode("//Queue").ChildNodes;
+                int id = nodes.Count;
                 var library = XElement.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
                 library.Add(new XElement("Ticket",
                 new XAttribute("description", Description.Text),
@@ -60,7 +64,8 @@ namespace _4330_MODEL_Project
                 new XAttribute("difficulty", Difficulty.Text),
                 new XAttribute("status", Status.Text),
                 new XAttribute("submittedBy", Technician.Text),
-                new XAttribute("hours", Hours.Text)));
+                new XAttribute("hours", Hours.Text),
+                new XAttribute("id", id.ToString())));
                 try
                 {
                     library.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
