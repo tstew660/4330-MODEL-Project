@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="App_Data\CustomerDrops.xml" />
     <Content Include="CustomerCreation.aspx" />
+    <Content Include="Receipt.aspx" />
     <Content Include="Technician.xml" />
     <Content Include="TicketCreation.aspx" />
     <Content Include="Tickets.xml" />
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="CustomerCreation.aspx.designer.cs">
       <DependentUpon>CustomerCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
     </Compile>
     <Compile Include="TicketCreation.aspx.cs">
       <DependentUpon>TicketCreation.aspx</DependentUpon>

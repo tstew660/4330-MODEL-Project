@@ -6,13 +6,15 @@
     
      <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <asp:DropDownList runat="server" ID="userField" DataSourceID="username" DataTextField="name" DataValueField="name"></asp:DropDownList>
+
+         <asp:XmlDataSource ID="username" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <asp:textbox ID="pass" placeholder="Enter Password" name="psw" runat="server"/>
 
 
-    <button type="button" onclick="location.href='Default.aspx'">Login</button>
+    <asp:button type="button" runat="server" OnClick="onButtonSubmit" Text="Login"></asp:button>
          
          
     <label>

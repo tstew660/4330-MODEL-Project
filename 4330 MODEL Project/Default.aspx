@@ -17,6 +17,10 @@
         }*/
 
     </script>
+    <script type="text/javascript">
+         $('#Accept').click(function(){ alert("This is how we do it!"); });
+    </script>
+    
 
     <asp:Table runat="server" ID="Queue">
         <asp:TableRow ID="HeaderRow" runat="server" Font-Bold="True" HorizontalAlign="Center" VerticalAlign="Bottom">
@@ -27,6 +31,7 @@
             <asp:TableCell runat="server" ID="SubmittedBy" Text="Submitted By" />
             <asp:TableCell runat="server" ID="Hours" Text="Hours" />
             <asp:TableCell runat="server" ID="Description" Text="Description" />
+            <asp:TableCell runat="server" ID="Accept" Text="Accept Job" />
         </asp:TableRow>
 
     </asp:Table> 
