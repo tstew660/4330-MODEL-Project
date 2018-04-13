@@ -121,16 +121,23 @@ namespace _4330_MODEL_Project
 
         protected void makeCLickable(object sender, EventArgs e)
         {
+            
             LinkButton src = (LinkButton)sender;
             int ID = Int32.Parse(src.ID);
             String description = Queue.Rows[ID + 1].Cells[6].Text;
             XmlDocument tickets = new XmlDocument();
             tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
-            string query = string.Format("//*[@description='{0}']", description);
-            XmlElement node = (XmlElement)tickets.SelectSingleNode(query);
-            node.SetAttribute("old", "true");
+            XmlDocument techs = new XmlDocument();
+            techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
+            string queryDesc = string.Format("//*[@description='{0}']", description);
+            XmlElement nodeDesc = (XmlElement)tickets.SelectSingleNode(queryDesc);
+            string queryName = string.Format("//*[@loggedIn='{0}']", "true");
+            XmlElement nodeName = (XmlElement)techs.SelectSingleNode(queryName);
+            nodeDesc.SetAttribute("old", "true");
             tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
-            Response.Redirect("Receipt.aspx");
+            String currUser = nodeName.GetAttribute("name");
+            String cust = nodeDesc.GetAttribute("owner");
+            Response.Redirect("Receipt.aspx?name="+currUser+"&custName="+cust);
         }
 
         

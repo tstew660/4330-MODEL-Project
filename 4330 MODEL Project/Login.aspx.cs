@@ -11,15 +11,27 @@ namespace _4330_MODEL_Project
      
     public partial class Contact : Page
     {
+        XmlDocument techs = new XmlDocument();
+            
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
+            XmlNodeList nodes = techs.SelectSingleNode("//Technicians").ChildNodes;
+
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                string id = i.ToString();
+                string query = string.Format("//*[@id='{0}']", id);
+                XmlElement el = (XmlElement)nodes[i];
+                el.SetAttribute("loggedIn", "false");
+            }
+            techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
         }
 
         protected void onButtonSubmit(object sender, EventArgs e)
         {
             String currentUser = userField.Text;
-            XmlDocument techs = new XmlDocument();
+            
             techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
             string query = string.Format("//*[@name='{0}']", currentUser);
             XmlElement node = (XmlElement)techs.SelectSingleNode(query);

@@ -55,7 +55,7 @@
                         <li><a runat="server" href="~/TicketCreation">Add Ticket</a></li>
                         <li><a runat="server" href="~/CustomerCreation">Add Customer</a></li>
                         <li><a runat="server" href="~/Tool">Assessment Tool</a></li>
-                        <li><a runat="server" id="userName" href="~/">Home</a></li>
+                        <li class="user" style="float: right;"><a runat="server" id="userName" href="~/">Home</a></li>
                     </ul>
                 </div>
             </div>

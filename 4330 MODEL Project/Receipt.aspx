@@ -10,10 +10,19 @@
     <form id="form1" runat="server">
         <div>
             <h2>MODEL Computing Services</h2>
+            <h2>Customer Name</h2>
             <asp:Label ID="CustomerName" runat="server"></asp:Label>
+            &nbsp;
+            <h2>Job Description</h2>
             <asp:Label ID="Description" runat="server"></asp:Label>
+            &nbsp;
+            <h2>Hours to Complete</h2>
             <asp:Label ID="Hours" runat="server"></asp:Label>
+            &nbsp;
+            <h2>Technician Name</h2>
             <asp:Label ID="Tech" runat="server"></asp:Label>
+            &nbsp;
+            <h2>Cost</h2>
             <asp:Label ID="Cost" runat="server"></asp:Label>
         </div>
     </form>

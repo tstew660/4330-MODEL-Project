@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Technicians>
-  <Technician name="Ronald Smith" ID="001" Wage="60.0" available="true" loggedIn="false" />
-  <Technician name="Emily Smith" ID="002" Wage="50.0" available="true" loggedIn="false" />
-  <Technician name="Gerald Thompson" ID="003" Wage="30.0" available="true" loggedIn="true" />
-  <Technician name="Jane Doe" ID="002" Wage="20.0" available="true" loggedIn="false" />
+  <Technician name="Ronald Smith" ID="001" wage="60" available="true" loggedIn="false" />
+  <Technician name="Emily Smith" ID="002" wage="50" available="true" loggedIn="true" />
+  <Technician name="Gerald Thompson" ID="003" wage="30" available="true" loggedIn="false" />
+  <Technician name="Jane Doe" ID="002" wage="20" available="true" loggedIn="false" />
 </Technicians>
