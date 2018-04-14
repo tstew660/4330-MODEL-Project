@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Technicians>
+  <Technician name="Ronald Smith" ID="001" Wage="60.0" available="true" loggedIn="false" hoursInactive="8" />
+  <Technician name="Emily Smith" ID="002" Wage="50.0" available="true" loggedIn="false" hoursInactive="8" />
+  <Technician name="Gerald Thompson" ID="003" Wage="30.0" available="true" loggedIn="true" hoursInactive="4" />
+  <Technician name="Jane Doe" ID="002" Wage="20.0" available="true" loggedIn="false" hoursInactive="8" />
+</Technicians>
