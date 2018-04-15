@@ -18,9 +18,9 @@ namespace _4330_MODEL_Project
             Difficulty.Items.Insert(2, new ListItem("2", "2"));
             Difficulty.Items.Insert(3, new ListItem("3", "3"));
 
-            Status.Items.Insert(0, new ListItem("Select a Ticket Status", ""));
-            Status.Items.Insert(1, new ListItem("Open", "Open"));
-            Status.Items.Insert(2, new ListItem("Closed", "Closed"));
+           // Status.Items.Insert(0, new ListItem("Select a Ticket Status", ""));
+           // Status.Items.Insert(1, new ListItem("Open", "Open"));
+           // Status.Items.Insert(2, new ListItem("Closed", "Closed"));
 
             
 
@@ -62,11 +62,12 @@ namespace _4330_MODEL_Project
                 new XAttribute("description", Description.Text),
                 new XAttribute("owner", Owner.Text),
                 new XAttribute("difficulty", Difficulty.Text),
-                new XAttribute("status", Status.Text),
+                new XAttribute("status", "open"),
                 new XAttribute("submittedBy", Technician.Text),
                 new XAttribute("hours", Hours.Text),
                 new XAttribute("id", id.ToString()),
-                new XAttribute("old", "false")));
+                new XAttribute("old", "false"),
+                new XAttribute("timeCreated", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz"))));
                 try
                 {
                     library.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
