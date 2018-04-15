@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Timers;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
-using System.Threading;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
@@ -14,72 +12,16 @@ namespace _4330_MODEL_Project
 {
     public partial class _Default : Page
     {
-       
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<XmlElement> testList = new List<XmlElement>();
-           
-            fillQueue(testList);
-            //this is calling dailyReset everytime the page is reloaded until the timer function is fixed
-            dailyReset();
-            //Thread timer = new Thread(new ThreadStart(resetTechs));
             
 
+            List<XmlElement> testList = new List<XmlElement>();
+            
+            fillQueue(testList);
 
+            
         }
-       /* void resetTechs()
-        {
-            while (true)
-            {
-                dailyReset();
-                Thread.Sleep(1000 * 60 ); // 5 Minutes
-            }
-        }*/
-
-        void dailyReset()
-        {
-            XmlDocument techs = new XmlDocument();
-            techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
-            XmlNodeList nodes = techs.SelectSingleNode("/Technicians").ChildNodes;
-            string id = "00";
-            int idEnd = 0;
-            for (int i = 0; i < nodes.Count; i++)
-            {
-
-                string query = string.Format("//*[@id='{0}']", id);
-
-                string query1 = string.Format("//*[@ID='{0}']", id + idEnd.ToString());
-                XmlElement el = (XmlElement)techs.SelectSingleNode(query1);
-                int hoursRemaining = Int32.Parse(el.GetAttribute("hoursRemaining"));
-                int dailyHoursInactive = Int32.Parse(el.GetAttribute("dailyHours"));
-                if (hoursRemaining > 0)
-                {
-                    if ((hoursRemaining - 8) >= 8)
-                    {
-
-                        hoursRemaining -= 8;
-                        el.SetAttribute("dailyHours", 0.ToString());
-                        el.SetAttribute("hoursRemaining", hoursRemaining.ToString());
-                    }
-                    else
-                    {
-                       // dailyHoursInactive = 8 - hoursRemaining;
-                        el.SetAttribute("dailyHours", (8 - hoursRemaining).ToString());
-                        el.SetAttribute("hoursRemaining", 0.ToString());
-                    }
-
-                }
-                else
-                {
-                    dailyHoursInactive = 0;
-                    el.SetAttribute("dailyHours", 8.ToString());
-                }
-                idEnd++;
-            }
-            techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
-        }
-
 
         protected int getCustJobCount(XmlElement ticketOwner)
         {
@@ -179,58 +121,41 @@ namespace _4330_MODEL_Project
 
         protected void makeCLickable(object sender, EventArgs e)
         {
-            
             LinkButton src = (LinkButton)sender;
             int ID = Int32.Parse(src.ID);
+            //getting description to remove node by from query by setting old attribute to false
             String description = Queue.Rows[ID + 1].Cells[6].Text;
             XmlDocument tickets = new XmlDocument();
             tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+            string query = string.Format("//*[@description='{0}']", description);
+            XmlElement node = (XmlElement)tickets.SelectSingleNode(query);
+            node.SetAttribute("old", "true");
+            
+
+            //getting hours inactive of technician and updating
+
+            int hoursInact;
+            int jobHours = Int32.Parse(node.GetAttribute("hours"));
             XmlDocument techs = new XmlDocument();
             techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
-            string queryDesc = string.Format("//*[@description='{0}']", description);
-            XmlElement nodeDesc = (XmlElement)tickets.SelectSingleNode(queryDesc);
-            string queryName = string.Format("//*[@loggedIn='{0}']", "true");
-            XmlElement nodeName = (XmlElement)techs.SelectSingleNode(queryName);
-            nodeDesc.SetAttribute("old", "true");
-            
-            String currUser = nodeName.GetAttribute("name");
-            String cust = nodeDesc.GetAttribute("owner");
-
-
-            int dailyHours;
-            int jobInProgress;
-            int jobHours = Int32.Parse(nodeDesc.GetAttribute("hours"));
-
+            string query2 = string.Format("//*[@loggedIn='{0}']", "true");
+            //string query3 = string.Format("//*[@hours='{}']", )
             try
             {
-                XmlElement el = (XmlElement)techs.SelectSingleNode(queryName);
-                jobInProgress = Int32.Parse(el.GetAttribute("hoursRemaining"));
-                dailyHours = Int32.Parse(el.GetAttribute("dailyHours"));
-                if (jobInProgress == 0) {
-                    if (jobHours > 8)
-                    {
-                        el.SetAttribute("dailyHours", 0.ToString());
-                        jobHours = (jobHours - 8);
-                        el.SetAttribute("hoursRemaining", jobHours.ToString());
-                    }
-                    else
-                    {
-                        el.SetAttribute("dailyHours", (dailyHours - jobHours).ToString());
-                    }
-                }
-                else
-                {
-                   // put error alert here saying a job is already in progress
-                }
-               
-             }
+                XmlElement el = (XmlElement)techs.SelectSingleNode(query2);
+                hoursInact = Int32.Parse(el.GetAttribute("hoursInactive"));
+                el.SetAttribute("hoursInactive", (hoursInact - jobHours).ToString());
+            }
             catch
-             {
-                dailyHours = 8;
-                            }
+            {
+                hoursInact = 8;
+            }
             tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
             techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
-            Response.Redirect("Receipt.aspx?name="+currUser+"&custName="+cust);
+
+
+            Response.Redirect("Receipt.aspx");
+           // Response.Write("Receipt.aspx");
         }
 
         
