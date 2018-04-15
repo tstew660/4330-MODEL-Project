@@ -127,17 +127,19 @@ namespace _4330_MODEL_Project
                 }
             }
             
-            queueList.Reverse();
+           queueList.Reverse();
             
-           /* foreach (XmlElement tic in queueList)
+           foreach (XmlElement tic in queueList)
             {
                 if (tic.GetAttribute("emergency") == "true")
                 {
+                    XmlElement currEl = tic;
                     queueList.Remove(tic);
-                    queueList.Insert(0, tic);
+                    queueList.Insert(0, currEl);
+                    break;
                 }
 
-            } */
+            } 
             int buttonID = 0;
             foreach(XmlElement sortedTicket in queueList)
             {
