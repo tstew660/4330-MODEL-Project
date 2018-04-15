@@ -19,7 +19,7 @@
             &nbsp;
             <h2>Empty Queue Percentage</h2>
             <asp:Label ID="queuePercent" runat="server"></asp:Label>
-            &nbsp;h
+            &nbsp;
             <h2>Idle Hours Per Technician</h2>
             <asp:Label ID="tech" runat="server"></asp:Label>
             

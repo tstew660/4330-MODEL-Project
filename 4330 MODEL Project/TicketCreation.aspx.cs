@@ -67,7 +67,11 @@ namespace _4330_MODEL_Project
                 new XAttribute("hours", Hours.Text),
                 new XAttribute("id", id.ToString()),
                 new XAttribute("old", "false"),
-                new XAttribute("timeCreated", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz"))));
+                new XAttribute("dateCreated", DateTime.Now.ToString("yyyy-MM-dd")),
+                new XAttribute("dateOpened", "waiting"),
+                new XAttribute("timeCreated", DateTime.Now.ToString("HH:mm")),
+                new XAttribute("timeOpened", "waiting")));
+                
                 try
                 {
                     library.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));

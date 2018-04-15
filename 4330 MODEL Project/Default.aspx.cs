@@ -192,10 +192,21 @@ namespace _4330_MODEL_Project
             string queryName = string.Format("//*[@loggedIn='{0}']", "true");
             XmlElement nodeName = (XmlElement)techs.SelectSingleNode(queryName);
             nodeDesc.SetAttribute("old", "true");
-            
+            nodeDesc.SetAttribute("dateOpened", DateTime.Now.ToString("yyyy-MM-dd"));
+            nodeDesc.SetAttribute("timeOpened", DateTime.Now.ToString("HH:mm"));
             String currUser = nodeName.GetAttribute("name");
             String cust = nodeDesc.GetAttribute("owner");
+            DateTime dt1 = DateTime.Parse("07/12/2011");
+            DateTime dt2 = DateTime.Now;
 
+            if (dt1.Date > dt2.Date)
+            {
+                //It's a later date
+            }
+            else
+            {
+                //It's an earlier or equal date
+            }
 
             int dailyHours;
             int jobInProgress;
@@ -228,6 +239,7 @@ namespace _4330_MODEL_Project
              {
                 dailyHours = 8;
                             }
+
             tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
             techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
             Response.Redirect("Receipt.aspx?name="+currUser+"&custName="+cust);
