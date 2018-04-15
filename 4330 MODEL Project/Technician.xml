@@ -2,7 +2,7 @@
 <Technicians>
   <Technician name="John Manager" ID="000" wage="100" available="true" loggedIn="false" manager="true" hoursInactive="8" />
   <Technician name="Ronald Smith" ID="001" wage="60" available="true" loggedIn="false" manager="false" hoursInactive="8" />
-  <Technician name="Emily Smith" ID="002" wage="50" available="true" loggedIn="false" manager="false" hoursInactive="8" />
+  <Technician name="Emily Smith" ID="002" wage="50" available="true" loggedIn="true" manager="false" hoursInactive="8" />
   <Technician name="Gerald Thompson" ID="003" wage="30" available="true" loggedIn="false" manager="false" hoursInactive="8" />
-  <Technician name="Jane Doe" ID="004" wage="20" available="true" loggedIn="true" manager="false" hoursInactive="8" />
+  <Technician name="Jane Doe" ID="004" wage="20" available="true" loggedIn="false" manager="false" hoursInactive="8" />
 </Technicians>

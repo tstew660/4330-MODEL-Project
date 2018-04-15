@@ -8,6 +8,7 @@
   <Ticket description="Test description" owner="Jills Company" difficulty="2" status="Open" submittedBy="Gerald Thompson" hours="4" id="5" old="false" />
   <Ticket description="LAN" owner="Jims Company" difficulty="3" status="Open" submittedBy="Emily Smith" hours="20" id="6" old="false" />
   <Ticket description="Setup" owner="Sams Company" difficulty="4" status="Open" submittedBy="Jane Doe" hours="30" id="7" old="false" />
-  <Ticket description="Bottom of Queue" owner="Freds Company" difficulty="1" status="Open" submittedBy="Ronald Smith" hours="40" id="8" old="true" />
+  <Ticket description="Bottom of Queue" owner="Freds Company" difficulty="1" status="Open" submittedBy="Ronald Smith" hours="40" id="8" old="false" />
   <Ticket description="Sweet Caroline" owner="Carolines Company" difficulty="3" status="Open" submittedBy="Ronald Smith" hours="5" id="9" old="false" />
+  <Ticket description="Install Stuff" owner="Bobs Company" difficulty="2" status="Open" submittedBy="John Manager" hours="70" id="10" old="false" />
 </Queue>

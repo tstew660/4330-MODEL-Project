@@ -65,7 +65,8 @@ namespace _4330_MODEL_Project
                 new XAttribute("status", Status.Text),
                 new XAttribute("submittedBy", Technician.Text),
                 new XAttribute("hours", Hours.Text),
-                new XAttribute("id", id.ToString())));
+                new XAttribute("id", id.ToString()),
+                new XAttribute("old", "false")));
                 try
                 {
                     library.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));

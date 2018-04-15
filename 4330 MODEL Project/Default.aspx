@@ -10,6 +10,7 @@
 .queuerow {
     border: 1px solid #ddd;
     text-align: left;
+    
 }
     </style>
    
