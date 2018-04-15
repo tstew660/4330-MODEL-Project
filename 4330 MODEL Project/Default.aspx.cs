@@ -37,6 +37,8 @@ namespace _4330_MODEL_Project
             }
         }*/
 
+        
+
         void dailyReset()
         {
             XmlDocument techs = new XmlDocument();
@@ -195,7 +197,7 @@ namespace _4330_MODEL_Project
             nodeDesc.SetAttribute("dateOpened", DateTime.Now.ToString("yyyy-MM-dd"));
             nodeDesc.SetAttribute("timeOpened", DateTime.Now.ToString("HH:mm"));
             String currUser = nodeName.GetAttribute("name");
-            String cust = nodeDesc.GetAttribute("owner");
+            String custNum = nodeDesc.GetAttribute("id");
             DateTime dt1 = DateTime.Parse("07/12/2011");
             DateTime dt2 = DateTime.Now;
 
@@ -242,7 +244,7 @@ namespace _4330_MODEL_Project
 
             tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
             techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
-            Response.Redirect("Receipt.aspx?name="+currUser+"&custName="+cust);
+            Response.Redirect("Receipt.aspx?name="+currUser+"&custID="+custNum);
         }
 
         
