@@ -9,6 +9,7 @@ using System.Xml;
 using System.Threading;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using System.Diagnostics;
 
 namespace _4330_MODEL_Project
 {
@@ -16,6 +17,11 @@ namespace _4330_MODEL_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                populateDropDown();
+                
+            }
 
             XmlDocument techs = new XmlDocument();
             techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
@@ -102,6 +108,8 @@ namespace _4330_MODEL_Project
             }
         }
 
+        
+
         protected void ManagerOverride(object sender, EventArgs e)
         {
             String ticID = queueOver.SelectedValue;
@@ -116,25 +124,41 @@ namespace _4330_MODEL_Project
                 XmlElement el = (XmlElement)tickets.SelectSingleNode(query);
                 el.SetAttribute("emergency", "false");
             }
-            string queryID = string.Format("//*[@id='{0}']", ticID);
+            string queryID = string.Format("//*[@description='{0}']", ticID);
             XmlElement overTic = (XmlElement)tickets.SelectSingleNode(queryID);
             overTic.SetAttribute("emergency", "true");
             tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
         }
+
+        protected void populateDropDown()
+        {
+            XmlDocument xDocument = new XmlDocument();
+            xDocument.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+            string query = string.Format("//*[@old='{0}']", "false");
+            foreach (XmlNode node in xDocument.SelectNodes(query))
+            {
+                queueOver.Items.Add(new ListItem(
+                    node.Attributes["description"].Value));
+            }
+            queueOver.DataValueField = "id";
+            queueOver.DataTextField = "description";
+            queueOver.DataBind();
+        }
     }
+
+
     
 
     public class AssessmentTool
     {
-        public double jobWaitTime;
-        public double queueLength;
-        public int jobsNotAddressed;
-        public double percentQueueEmpty;
-        public double techHoursIdle;
+        public static void randomMethod(object sender, EventArgs e)
+        {
+            
+        }
 
-       
 
-        
+
+
 
     }
 
