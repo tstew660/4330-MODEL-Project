@@ -664,7 +664,7 @@ blockquote p {
 
 blockquote p:last-child {
   margin-bottom: 0;
-}
+}ly
 
 blockquote small {
   display: block;
@@ -1746,6 +1746,8 @@ input[type="number"]::-webkit-inner-spin-button {
 fieldset[disabled] .form-control {
   cursor: not-allowed;
   background-color: #eeeeee;
+
+{
 }
 
 textarea.form-control {

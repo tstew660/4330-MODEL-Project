@@ -107,6 +107,7 @@ namespace _4330_MODEL_Project
                 string id = i.ToString();
                 string query = string.Format("//*[@id='{0}']", id);
                 XmlElement el = (XmlElement)tickets.SelectSingleNode(query);
+                
                 if (el.GetAttribute("old") == "false")
                     queueList.Add(el);
             }
@@ -125,8 +126,18 @@ namespace _4330_MODEL_Project
                     
                 }
             }
-
+            
             queueList.Reverse();
+            
+           /* foreach (XmlElement tic in queueList)
+            {
+                if (tic.GetAttribute("emergency") == "true")
+                {
+                    queueList.Remove(tic);
+                    queueList.Insert(0, tic);
+                }
+
+            } */
             int buttonID = 0;
             foreach(XmlElement sortedTicket in queueList)
             {

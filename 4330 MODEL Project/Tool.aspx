@@ -22,6 +22,10 @@
             &nbsp;
             <h2>Idle Hours Per Technician</h2>
             <asp:Label ID="tech" runat="server"></asp:Label>
+            <asp:DropDownList runat="server" ID="queueOver" DataSourceID="Techs" DataTextField="description" DataValueField="id"></asp:DropDownList>
+            <asp:Button runat="server" Text="Override" OnClick="ManagerOverride"></asp:Button>
+
+            <asp:XmlDataSource ID="Techs" runat="server" DataFile="~/Tickets.xml"></asp:XmlDataSource>
             
 
         </div>
