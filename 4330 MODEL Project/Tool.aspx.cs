@@ -170,6 +170,7 @@ namespace _4330_MODEL_Project
             int emptyQueueHours = 0;
             int queueEmpty = 0;
             int dayCounter = 0;
+            String today = DateTime.Now.ToString("yyyy-MM-dd");
 
             //opening tickets xml document
             XmlDocument tickets = new XmlDocument();
