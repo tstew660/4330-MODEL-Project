@@ -15,12 +15,17 @@ namespace _4330_MODEL_Project
 {
     public partial class About : Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 populateDropDown();
-                
+
+                //Assign values to ASP controls here
+                //Daily first
+                //if (monthlyResult != null)
+                //Assign monthly
             }
 
             XmlDocument techs = new XmlDocument();
@@ -159,7 +164,12 @@ namespace _4330_MODEL_Project
         /*added timer for each average we need
          * such as queuelength, time queue is empty
          */
-        public static void randomMethod(object sender, EventArgs e)
+
+        //Daily and monthly string initilaized, day counter outside of function. 
+        public static String[] dailyresult = new String[5];
+        public static String[] monthlyresult = new String[5];
+        public static int dayCounter = 0;
+        public static void RandomMethod(object sender, EventArgs e)
         {
             //wait time before starting
             var totalTime = TimeSpan.Zero;
@@ -169,8 +179,9 @@ namespace _4330_MODEL_Project
             int queueLength = 0;
             int emptyQueueHours = 0;
             int queueEmpty = 0;
-            int dayCounter = 0;
-
+            
+            String today = DateTime.Now.ToString("yyyy-MM-dd");
+            
 
             XmlDocument tickets = new XmlDocument();
             tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
@@ -193,14 +204,17 @@ namespace _4330_MODEL_Project
                     totalTime = totalTime.Add(time);
                 }
             }
-            TimeSpan avgTime;
+            TimeSpan avgTime = new TimeSpan();
+            
             try
             {
                 avgTime = new TimeSpan(totalTime.Ticks / ticketCounter);
+                
                 waitTime.Text = avgTime.ToString();
             }
             catch
             {
+                
                 waitTime.Text = "No tickets have been closed today";
             }
             //checking if queue is empty during this hour
@@ -220,18 +234,30 @@ namespace _4330_MODEL_Project
             }
             currentHour++;
             queueLength += queueCounter / currentHour;
+           
             queueLength.Text += queueLength;
+           
             queuePercent.Text += queueEmpty / currentHour;
             tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
-
             dayCounter++;
             if (dayCounter == 8)
             {
                 dayCounter = 0;
+                
                 queuePercentMonth.Text += queueEmpty / currentHour;
+                
                 queueLengthMonth.Text += queueLength;
+                
                 waitTimeMonth.Text += avgTime.ToString();
+
+                //Assign monthly values to monthly array here
+                //monthlyResult[0] = Whatever first monthly data piece is
+                //monthlyResult[1] = etc....
             }
+            //Assign daily values to daily array here
+            //dailyResult[0] = Whatever first daily data piece is
+            //dailyResult[1] = etc....
+
         }
     }
             

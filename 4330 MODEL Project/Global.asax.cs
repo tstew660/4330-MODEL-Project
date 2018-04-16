@@ -20,7 +20,7 @@ namespace _4330_MODEL_Project
             {
                 _timer = new Timer();
                 _timer.Interval = 30000; // some interval
-                _timer.Elapsed += new ElapsedEventHandler(AssessmentTool.randomMethod);
+                _timer.Elapsed += new ElapsedEventHandler(AssessmentTool.RandomMethod);
                 _timer.Start();
             }
             RouteConfig.RegisterRoutes(RouteTable.Routes);
