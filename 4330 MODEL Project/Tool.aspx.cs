@@ -48,12 +48,14 @@ namespace _4330_MODEL_Project
                         String name = el.GetAttribute("name");
                         int dailyHoursInactive = Int32.Parse(el.GetAttribute("dailyHours"));
                         tech.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        //Added month part
+                        techMonth.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
                         idEnd++;
                     }
                     techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
                     int jobsLeftOver = 0;
-                    var totalTime = TimeSpan.Zero;
-                    int ticketCounter = 0;
+                    //var totalTime = TimeSpan.Zero;
+                    //int ticketCounter = 0;
                     String today = DateTime.Now.ToString("yyyy-MM-dd");
 
                     XmlDocument tickets = new XmlDocument();
@@ -72,11 +74,13 @@ namespace _4330_MODEL_Project
                             {
                                 jobsLeftOver++;
                                 jobsLeft.Text = jobsLeftOver + " job(s) were not addressed the day they were submitted.";
+                                //Added month part
+                                jobsLeftMonth.Text = jobsLeftOver + " job(s) were not addressed the day they were submitted.";
                             }
                         }
                     }
-                    
-                    for (int i = 0; i < nodesTickets.Count; i++)
+                    //Commeted out just for right now
+                    /*for (int i = 0; i < nodesTickets.Count; i++)
                     {
                         string idTic = i.ToString();
                         string query = string.Format("//*[@id='{0}']", idTic);
@@ -104,6 +108,7 @@ namespace _4330_MODEL_Project
                     
                     
                     tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+                    */
                 }
             }
         }
@@ -151,15 +156,85 @@ namespace _4330_MODEL_Project
 
     public class AssessmentTool
     {
+        /*added timer for each average we need
+         * such as queuelength, time queue is empty
+         */
         public static void randomMethod(object sender, EventArgs e)
         {
-            
+            //wait time before starting
+            var totalTime = TimeSpan.Zero;
+            int ticketCounter = 0;
+            int queueCounter = 0;
+            int currentHour =0;
+            int queueLength = 0;
+            int emptyQueueHours = 0;
+            int queueEmpty = 0;
+            int dayCounter = 0;
+
+
+            XmlDocument tickets = new XmlDocument();
+            tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+            XmlNodeList nodesTickets = tickets.SelectSingleNode("//Queue").ChildNodes;
+            for (int i = 0; i < nodesTickets.Count;i++)
+            {
+                string idTic = i.ToString();
+                string query = string.Format("//*[@id='{0}']", idTic);
+                XmlElement elTic = (XmlElement)tickets.SelectSingleNode(query);
+                if (elTic.GetAttribute("old") == "false")
+                {
+                    queueCounter++;
+                }
+                if ((elTic.GetAttribute("old") == "true") && (elTic.GetAttribute("dateOpened") == today))
+                {
+                    ticketCounter++;
+                    String timeCreated = elTic.GetAttribute("timeCreated");
+                    String timeOpened = elTic.GetAttribute("timeOpened");
+                    TimeSpan time = DateTime.Parse(timeOpened).Subtract(DateTime.Parse(timeCreated));
+                    totalTime = totalTime.Add(time);
+                }
+            }
+            TimeSpan avgTime;
+            try
+            {
+                avgTime = new TimeSpan(totalTime.Ticks / ticketCounter);
+                waitTime.Text = avgTime.ToString();
+            }
+            catch
+            {
+                waitTime.Text = "No tickets have been closed today";
+            }
+            //checking if queue is empty during this hour
+            for (int i = 0; i < nodesTickets.Count; i++)
+            {
+                string ids = i.ToString();
+                string query = string.Format("//*[@id='{0}']", ids);
+                XmlElement elTic = (XmlElement)tickets.SelectSingleNode(query);
+                if (elTic.GetAttribute("old") == "true")
+                {
+                    emptyQueueHours++;
+                }
+            }
+            if (emptyQueueHours == nodesTickets.Count)
+            {
+                queueEmpty++;
+            }
+            currentHour++;
+            queueLength += queueCounter / currentHour;
+            queueLength.Text += queueLength;
+            queuePercent.Text += queueEmpty / currentHour;
+            tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+
+            dayCounter++;
+            if (dayCounter == 8)
+            {
+                dayCounter = 0;
+                queuePercentMonth.Text += queueEmpty / currentHour;
+                queueLengthMonth.Text += queueLength;
+                waitTimeMonth.Text += avgTime.ToString();
+            }
         }
-
-
-
-
-
     }
+            
+  
 
 }
