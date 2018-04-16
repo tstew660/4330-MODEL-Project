@@ -10,6 +10,7 @@ using System.Threading;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using System.Diagnostics;
+using System.IO;
 
 namespace _4330_MODEL_Project
 {
@@ -17,10 +18,16 @@ namespace _4330_MODEL_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
                 populateDropDown();
-                
+                waitTime.Text = AssessmentTool.avgWaitTime;
+                queueLength.Text = AssessmentTool.queueLengthDay;
+                queuePercent.Text = AssessmentTool.queuePerDay;
+                waitTimeMonth.Text = AssessmentTool.queueWaitMon;
+                queueLengthMonth.Text = AssessmentTool.queueLenMon;
+                queuePercentMonth.Text = AssessmentTool.queuePerMon;
             }
 
             XmlDocument techs = new XmlDocument();
@@ -159,7 +166,14 @@ namespace _4330_MODEL_Project
         /*added timer for each average we need
          * such as queuelength, time queue is empty
          */
-       public static void randomMethod(object sender, EventArgs e)
+        public static int dayCounter = 0;
+        public static String avgWaitTime = "";
+        public static String queueLengthDay = "";
+        public static String queuePerDay = "";
+        public static String queuePerMon = "";
+        public static String queueLenMon = "";
+        public static String queueWaitMon = "";
+        public static void randomMethod(object sender, EventArgs e)
         {
             //wait time before starting
             var totalTime = TimeSpan.Zero;
@@ -169,12 +183,13 @@ namespace _4330_MODEL_Project
             int queueLengthHour = 0;
             int emptyQueueHours = 0;
             int queueEmpty = 0;
-            int dayCounter = 0;
+            
             String today = DateTime.Now.ToString("yyyy-MM-dd");
 
             //opening tickets xml document
             XmlDocument tickets = new XmlDocument();
-            tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+            String path = AppDomain.CurrentDomain.BaseDirectory + "//Tickets.xml";
+            tickets.Load(path);
             //getting list of child nodes in tickets xml doc
             XmlNodeList nodesTickets = tickets.SelectSingleNode("//Queue").ChildNodes;
             //iterating through each child node(ticket) in tickets.xml
@@ -206,18 +221,20 @@ namespace _4330_MODEL_Project
                 }
             }
             // declaring avgTime variable here because it gave an error when declared in the try catch. avgTime is the variable for the daily average time tickets had to wait before being addressed.
-            TimeSpan avgTime;
+            TimeSpan avgTime = new TimeSpan();
             try
             {
                 //calculating average ***up until this point in time!*** meaning if 3/8 hours in the workday have passed, this is the average at the 3 hour mark.
                 avgTime = new TimeSpan(totalTime.Ticks / ticketCounter);
                 //replacing the text in the waitTime label on the tool page with the updated average
-                waitTime.Text = avgTime.ToString();
+                //waitTime.Text = avgTime.ToString();
+                avgWaitTime = avgTime.ToString();
             }
             catch
             {
                 //if no tickets have been closed yet (such as if the workday hours have not yet passed 0 or 1 and a ticket hasn't been opened by a technician yet)
-                waitTime.Text = "No tickets have been closed today";
+                //waitTime.Text = "No tickets have been closed today";
+                avgWaitTime = "No tickets have been closed today";
             }
             //iterating through all tickets to find the average percent of time the queue is empty
             for (int i = 0; i < nodesTickets.Count; i++)
@@ -245,12 +262,14 @@ namespace _4330_MODEL_Project
             currentHour++;
             // queueLengthHour is updated to the current average including the new data for this hour
             queueLengthHour += queueCounter / currentHour;
-           //queueLength label is replaced to display the new daily average queue length, including this hour
-            queueLength.Text = queueLength;
+            //queueLength label is replaced to display the new daily average queue length, including this hour
+            //queueLength.Text = queueLength;
+            queueLengthDay = queueLengthHour.ToString();
            //queuePercent label is updated to display the new daily average percent of time queue is empty, including data from this hour
-            queuePercent.Text += queueEmpty / currentHour;
-           //saving tickets doc
-            tickets.Save(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+           // queuePercent.Text += queueEmpty / currentHour;\
+           queuePerDay += queueEmpty / currentHour;
+            //saving tickets doc
+            tickets.Save(path);
             //incrementing counter variable dayCounter because all of the data for the hour has been calculated. This variable should really be called "hourCounter".
             //once dayCounter reaches 8, the workday is considered over because there are only 8 hours in a workday (dayCounter starts at 0 and goes to 7, totalling 8 hours)
             dayCounter++;
@@ -260,11 +279,15 @@ namespace _4330_MODEL_Project
                 //reset dayCounter so the next workday will correctly record its data
                 dayCounter = 0;
                 //queuePercentMonth is the label for the MONTHLY average percent of time the queue is empty. It is totalling the total hours the queue was empty today out of 8 hours to get today's total average and add that to the monthly average. These need to later be divided by the number of days in the month to get the correct average value, but this should not cause actual errors right now, the value will just be incorrect until they're divided by the correct number of total days.
-                queuePercentMonth.Text += queueEmpty / currentHour;
+                //queuePercentMonth.Text += queueEmpty / currentHour;
+                queuePerMon += queueEmpty / currentHour;
                 //queueLengthMonth is the label for the MONTHLY average queue length; this simply adds the day's queueLength value. This will also need to be later divided by the correct number of days.
-                queueLengthMonth.Text += queueLength;
+                //queueLengthMonth.Text += queueLength;
+                queueLenMon += queueLengthHour.ToString();
                 //waitTimeMonth is the label for the MONTHLY average amount of time a ticket waits before it is opened by a tech.
-                waitTimeMonth.Text += avgTime.ToString();
+                //waitTimeMonth.Text += avgTime.ToString();
+                queueWaitMon += avgTime.ToString();
+
             }
         }
     }
