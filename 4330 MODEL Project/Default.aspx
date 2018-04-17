@@ -19,7 +19,7 @@
         <div class="box-body table-responsive no-padding">
    
   
-        <asp:Table runat="server" ID="Queue" CssClass="queue">
+        <asp:Table runat="server" ID="Queue" CssClass="table table-hover">
         <asp:TableRow CssClass="queuerow" ID="HeaderRow" runat="server" Font-Bold="True" HorizontalAlign="Center" VerticalAlign="Bottom">
             <asp:TableCell runat="server" ID="Priority" Text="Priority" />
             <asp:TableCell runat="server" ID="Owmer" Text="Owner" />
