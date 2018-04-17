@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Technicians>
-  <Technician name="John Manager" ID="000" wage="100" available="true" loggedIn="true" manager="true" dailyHours="3" hoursRemaining="0" />
+  <Technician name="John Manager" ID="000" wage="100" available="true" loggedIn="true" manager="true" dailyHours="0" hoursRemaining="24" />
   <Technician name="Ronald Smith" ID="001" wage="60" available="true" loggedIn="false" manager="false" dailyHours="8" hoursRemaining="0" />
   <Technician name="Emily Smith" ID="002" wage="50" available="true" loggedIn="false" manager="false" dailyHours="8" hoursRemaining="0" />
   <Technician name="Gerald Thompson" ID="003" wage="30" available="true" loggedIn="false" manager="false" dailyHours="8" hoursRemaining="0" />

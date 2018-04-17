@@ -23,12 +23,8 @@
      <asp:DropDownList runat="server" ID="Difficulty"></asp:DropDownList>
         </div>
     &nbsp;
-    <p>Select Status</p>
-    <div>
-        
-     <asp:DropDownList runat="server" ID="Status"></asp:DropDownList>
-        </div>
-    &nbsp;
+    
+    
     <p>Select Technician</p>
     <div>
         
@@ -48,9 +44,9 @@
     <asp:TextBox runat="server" ID="Description"></asp:TextBox>
         </div>
     &nbsp;
-
+    <div>
     <asp:Button runat="server" Text="Submit" OnCommand="custSubmit"></asp:Button>
-    
+    </div>
     <asp:XmlDataSource ID="Customers" runat="server" DataFile="~/Customer.xml"></asp:XmlDataSource>
 
 </asp:Content>

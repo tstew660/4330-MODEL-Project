@@ -76,13 +76,40 @@ namespace _4330_MODEL_Project {
         protected global::System.Web.UI.WebControls.Label tech;
         
         /// <summary>
-        /// queueOver control.
+        /// techTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList queueOver;
+        protected global::System.Web.UI.WebControls.Table techTable;
+        
+        /// <summary>
+        /// row control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderRow row;
+        
+        /// <summary>
+        /// Name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell Name;
+        
+        /// <summary>
+        /// Hours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell Hours;
         
         /// <summary>
         /// CustomerNameMonth control.
@@ -130,6 +157,42 @@ namespace _4330_MODEL_Project {
         protected global::System.Web.UI.WebControls.Label queuePercentMonth;
         
         /// <summary>
+        /// techTableMon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table techTableMon;
+        
+        /// <summary>
+        /// TableHeaderRow1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderRow TableHeaderRow1;
+        
+        /// <summary>
+        /// TableHeaderCell1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell TableHeaderCell1;
+        
+        /// <summary>
+        /// TableHeaderCell2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell TableHeaderCell2;
+        
+        /// <summary>
         /// techMonth control.
         /// </summary>
         /// <remarks>
@@ -137,5 +200,14 @@ namespace _4330_MODEL_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label techMonth;
+        
+        /// <summary>
+        /// queueOver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList queueOver;
     }
 }

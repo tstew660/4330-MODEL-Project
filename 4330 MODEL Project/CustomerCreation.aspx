@@ -22,9 +22,9 @@
     <asp:TextBox runat="server" ID="CompanyAddress"></asp:TextBox>
         </div>
     &nbsp;
-
+    <div>
     <asp:Button runat="server" Text="Submit" OnCommand="custSubmit"></asp:Button>
-    
+    </div>
     <asp:XmlDataSource ID="Customers" runat="server" DataFile="~/Customer.xml"></asp:XmlDataSource>
 
 </asp:Content>

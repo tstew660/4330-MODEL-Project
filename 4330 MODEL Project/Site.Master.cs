@@ -19,7 +19,7 @@ namespace _4330_MODEL_Project
             try
             {
                 XmlElement el = (XmlElement)techs.SelectSingleNode(query);
-                userName.InnerText = el.GetAttribute("name");
+                userName.InnerText = "Hi, " + el.GetAttribute("name");
             }
             catch
             {

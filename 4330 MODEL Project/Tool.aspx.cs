@@ -50,13 +50,29 @@ namespace _4330_MODEL_Project
                     int idEnd = 0;
                     for (int i = 0; i < nodes.Count; i++)
                     {
+                        TableRow dayRow = new TableRow();
+                        TableCell nameCell = new TableCell();
+                        TableCell hoursCell = new TableCell();
+                        TableRow monRow = new TableRow();
+                        TableCell nameCellMon = new TableCell();
+                        TableCell hoursCellMon = new TableCell();
                         string query1 = string.Format("//*[@ID='{0}']", id + idEnd.ToString());
                         XmlElement el = (XmlElement)techs.SelectSingleNode(query1);
                         String name = el.GetAttribute("name");
                         int dailyHoursInactive = Int32.Parse(el.GetAttribute("dailyHours"));
-                        tech.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        //tech.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        nameCell.Text = name;
+                        hoursCell.Text += dailyHoursInactive;
+                        dayRow.Cells.Add(nameCell);
+                        dayRow.Cells.Add(hoursCell);
+                        techTable.Rows.Add(dayRow);
                         //Added month part
-                        techMonth.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        //techMonth.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        nameCellMon.Text = name;
+                        hoursCellMon.Text += dailyHoursInactive;
+                        monRow.Cells.Add(nameCellMon);
+                        monRow.Cells.Add(hoursCellMon);
+                        techTableMon.Rows.Add(monRow);
                         idEnd++;
                     }
                     techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
@@ -267,7 +283,7 @@ namespace _4330_MODEL_Project
             queueLengthDay = queueLengthHour.ToString();
            //queuePercent label is updated to display the new daily average percent of time queue is empty, including data from this hour
            // queuePercent.Text += queueEmpty / currentHour;\
-           queuePerDay += queueEmpty / currentHour;
+           queuePerDay = queueEmpty / currentHour + "%";
             //saving tickets doc
             tickets.Save(path);
             //incrementing counter variable dayCounter because all of the data for the hour has been calculated. This variable should really be called "hourCounter".
@@ -280,7 +296,7 @@ namespace _4330_MODEL_Project
                 dayCounter = 0;
                 //queuePercentMonth is the label for the MONTHLY average percent of time the queue is empty. It is totalling the total hours the queue was empty today out of 8 hours to get today's total average and add that to the monthly average. These need to later be divided by the number of days in the month to get the correct average value, but this should not cause actual errors right now, the value will just be incorrect until they're divided by the correct number of total days.
                 //queuePercentMonth.Text += queueEmpty / currentHour;
-                queuePerMon += queueEmpty / currentHour;
+                queuePerMon = queueEmpty / currentHour + "%";
                 //queueLengthMonth is the label for the MONTHLY average queue length; this simply adds the day's queueLength value. This will also need to be later divided by the correct number of days.
                 //queueLengthMonth.Text += queueLength;
                 queueLenMon += queueLengthHour.ToString();
