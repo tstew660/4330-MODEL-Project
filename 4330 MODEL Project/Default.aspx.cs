@@ -96,6 +96,19 @@ namespace _4330_MODEL_Project
            
         }
 
+        protected void setCustJobCount(XmlElement ticketOwner)
+        {
+            XmlDocument customer = new XmlDocument();
+            customer.Load(HttpContext.Current.Server.MapPath("~/Customer.xml"));
+            String ownerName = ticketOwner.GetAttribute("owner");
+            string query1 = string.Format("//*[@name='{0}']", ownerName);
+            XmlElement test = (XmlElement)customer.SelectSingleNode(query1);
+            String jobCount = test.GetAttribute("jobCount");
+            int x = Int32.Parse(jobCount) + 1;
+            test.SetAttribute("jobCount", x.ToString());
+            customer.Save(HttpContext.Current.Server.MapPath("~/Customer.xml"));
+        }
+
         protected void fillQueue(List<XmlElement> queueList)
         {
             XmlDocument tickets = new XmlDocument();
@@ -206,6 +219,7 @@ namespace _4330_MODEL_Project
             XmlElement nodeDesc = (XmlElement)tickets.SelectSingleNode(queryDesc);
             string queryName = string.Format("//*[@loggedIn='{0}']", "true");
             XmlElement nodeName = (XmlElement)techs.SelectSingleNode(queryName);
+            setCustJobCount(nodeDesc);
             nodeDesc.SetAttribute("old", "true");
             nodeDesc.SetAttribute("dateOpened", DateTime.Now.ToString("yyyy-MM-dd"));
             nodeDesc.SetAttribute("timeOpened", DateTime.Now.ToString("HH:mm"));

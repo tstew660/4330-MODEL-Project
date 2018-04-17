@@ -39,7 +39,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div style="background-color: lightsteelblue; border-color: lightsteelblue;" class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,15 +47,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server">MODEL</a>
+                    <a style="font-family:Impact; color: orangered; font-size: 20px" class="navbar-brand" runat="server">MODEL inc.</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/TicketCreation">Add Ticket</a></li>
-                        <li><a runat="server" href="~/CustomerCreation">Add Customer</a></li>
-                        <li><a runat="server" href="~/Tool">Assessment Tool</a></li>
-                        <li class="user" style="float: right;"><a runat="server" id="userName" href="~/">Home</a></li>
+                        <li><a style="color: black;" runat="server" href="~/">Home</a></li>
+                        <li><a style="color: black;" runat="server" href="~/TicketCreation">Add Ticket</a></li>
+                        <li><a style="color: black;" runat="server" href="~/CustomerCreation">Add Customer</a></li>
+                        <li><a style="color: black;" runat="server" href="~/Tool">Assessment Tool</a></li>
+                        <li style="position: relative; float: right;" class="user"><a style="color: black;" runat="server" id="userName" href="~/">Home</a></li>
                     </ul>
                 </div>
             </div>
