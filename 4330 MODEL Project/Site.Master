@@ -55,8 +55,10 @@
                         <li><a style="color: black;" runat="server" href="~/TicketCreation">Add Ticket</a></li>
                         <li><a style="color: black;" runat="server" href="~/CustomerCreation">Add Customer</a></li>
                         <li><a style="color: black;" runat="server" href="~/Tool">Assessment Tool</a></li>
-                        <li style="position: relative; float: right;" class="user"><a style="color: black;" runat="server" id="userName" href="~/">Home</a></li>
+                        <li style="position: relative; float: right;" class="user"><a style="color: black;" runat="server" id="userName" href="#"></a></li>
+                        
                     </ul>
+                    <p><a style="color: black; float: right; margin-top: 15px;" runat="server" href="~/Login">Logout</a></p>
                 </div>
             </div>
         </div>

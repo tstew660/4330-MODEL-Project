@@ -21,6 +21,7 @@ namespace _4330_MODEL_Project
            
             if (!IsPostBack)
             {
+                queueOver.Items.Insert(0, "Select a Job");
                 populateDropDown();
                 waitTime.Text = AssessmentTool.avgWaitTime;
                 queueLength.Text = AssessmentTool.queueLengthDay;
@@ -140,6 +141,7 @@ namespace _4330_MODEL_Project
 
         protected void ManagerOverride(object sender, EventArgs e)
         {
+           
             String ticID = queueOver.SelectedValue;
             XmlDocument tickets = new XmlDocument();
             tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));

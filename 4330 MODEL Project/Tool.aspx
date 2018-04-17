@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
-        .container  {
+        .container div:not(.navbar-collapse collapse)  {
             display: flex;
             align-content:space-around;
         }
@@ -77,7 +77,7 @@
                 <h3>Override Queue
                 </h3>
             <asp:DropDownList runat="server" ID="queueOver" ></asp:DropDownList>
-                <div>
+                <div style="margin-top: 7px;">
             <asp:Button runat="server" Text="Override" OnClick="ManagerOverride"></asp:Button>
                     </div>
             </div>

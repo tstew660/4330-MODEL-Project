@@ -34,12 +34,7 @@ namespace _4330_MODEL_Project
            
         }
 
-        protected void insertInitialTech(object sender, EventArgs e)
-        {
-            
-
-            Technician.Items.Insert(0, new ListItem("Select a Technician", ""));
-        }
+        
 
         protected void custSubmit(object sender, EventArgs e)
         {
@@ -47,7 +42,7 @@ namespace _4330_MODEL_Project
             Owner.SelectedIndex == 0 ||
             Difficulty.SelectedIndex == 0 ||
            
-            Technician.SelectedIndex == 0 ||
+            
             Hours.Text == String.Empty)
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "popDeny()", true);
@@ -55,6 +50,11 @@ namespace _4330_MODEL_Project
             else {
                 XmlDocument tickets = new XmlDocument();
                 tickets.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
+                XmlDocument techs = new XmlDocument();
+                techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
+                string queryCust = string.Format("//*[@loggedIn='{0}']", "true");
+                XmlElement currUser = (XmlElement)techs.SelectSingleNode(queryCust);
+                String currUserStr = currUser.GetAttribute("name");
                 XmlNodeList nodes = tickets.SelectSingleNode("//Queue").ChildNodes;
                 int id = nodes.Count;
                 var library = XElement.Load(HttpContext.Current.Server.MapPath("~/Tickets.xml"));
@@ -62,15 +62,16 @@ namespace _4330_MODEL_Project
                 new XAttribute("description", Description.Text),
                 new XAttribute("owner", Owner.Text),
                 new XAttribute("difficulty", Difficulty.Text),
-                new XAttribute("status", "open"),
-                new XAttribute("submittedBy", Technician.Text),
+                new XAttribute("status", "Open"),
+                new XAttribute("submittedBy", currUserStr),
                 new XAttribute("hours", Hours.Text),
                 new XAttribute("id", id.ToString()),
                 new XAttribute("old", "false"),
                 new XAttribute("dateCreated", DateTime.Now.ToString("yyyy-MM-dd")),
                 new XAttribute("dateOpened", "waiting"),
                 new XAttribute("timeCreated", DateTime.Now.ToString("HH:mm")),
-                new XAttribute("timeOpened", "waiting")));
+                new XAttribute("timeOpened", "waiting"),
+                new XAttribute("emergency", "false")));
                 
                 try
                 {
@@ -91,7 +92,7 @@ namespace _4330_MODEL_Project
             Owner.SelectedIndex = 0;
             Difficulty.SelectedIndex = 0;
            
-            Technician.SelectedIndex = 0;
+            
             Hours.Text = String.Empty;
         }
 

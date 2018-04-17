@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Customers>
   <Customer name="Bobs Company" address="1234 sample st." priority="1" jobCount="1" />
-  <Customer name="Jims Company" address="567 Test st." priority="5" jobCount="6" />
+  <Customer name="Jims Company" address="567 Test st." priority="5" jobCount="24" />
   <Customer name="Jills Company" address="146 Wow st." priority="2" jobCount="2" />
-  <Customer name="Sams Company" address="478 oak st." priority="3" jobCount="6" />
+  <Customer name="Sams Company" address="478 oak st." priority="3" jobCount="11" />
   <Customer name="Bills Company" address="483 North Ave." priority="0" jobCount="0" />
-  <Customer name="Freds Company" address="132 Road" priority="0" jobCount="1" />
+  <Customer name="Freds Company" address="132 Road" priority="0" jobCount="2" />
   <Customer name="Carolines Company" address="4927 Apple st." priority="0" jobCount="1" />
   <Customer name="Gregs Company" address="687 Wallaby Way" priority="0" jobCount="1" />
 </Customers>

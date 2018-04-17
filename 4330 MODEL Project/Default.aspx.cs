@@ -19,7 +19,7 @@ namespace _4330_MODEL_Project
         protected void Page_Load(object sender, EventArgs e)
         {
             List<XmlElement> testList = new List<XmlElement>();
-           
+            
             fillQueue(testList);
             //this is calling dailyReset everytime the page is reloaded until the timer function is fixed
             dailyReset();

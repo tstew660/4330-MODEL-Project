@@ -25,13 +25,8 @@
     &nbsp;
     
     
-    <p>Select Technician</p>
-    <div>
-        
-     <asp:DropDownList runat="server" ID="Technician" DataSourceID="Techs" DataTextField="name" DataValueField="name"  OnDataBound="insertInitialTech"></asp:DropDownList>
-        <asp:XmlDataSource ID="Techs" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
-        </div>
-    &nbsp;
+   
+  
     <p>Enter Estimated Hours for Completion</p>
     <div>
         
