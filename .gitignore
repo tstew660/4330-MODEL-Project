@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/4330 MODEL Project/admin-lte/img
+/4330 MODEL Project/admin-lte/js/pages
