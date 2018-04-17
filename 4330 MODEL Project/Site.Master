@@ -1,14 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="_4330_MODEL_Project.SiteMaster" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html >
 
-<html lang="en">
+<html>
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> -MODEL Services</title>
      <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-CompaAdminLTE 2 | Starter</title>
+   
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
   <link rel="stylesheet" href="Content/bootstrap.css"/>
@@ -42,9 +42,10 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-    <form runat="server">
-        <asp:ScriptManager runat="server">
+<body>
+
+        <form id="form1" runat="server">
+             <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
@@ -64,8 +65,8 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <div class="wrapper">
-            <header class="main-header">
+            <div class="wrapper">
+                      <header class="main-header">
 
     <!-- Logo -->
     <a href="index2.html" class="logo">
@@ -235,8 +236,7 @@
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+                 <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -280,10 +280,12 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+                
+            </div>
+        
+            <div class="content-wrapper">
+                
+                <section class="content-header">
       <h1>
         Ticket Queue
         <small>Optional description</small>
@@ -293,30 +295,24 @@
         <li class="active">Here</li>
       </ol>
     </section>
+                <asp:contentplaceholder id="MainContent" runat="server">
+                  <!-- Page-specific content will go here... -->
+                   
+                </asp:contentplaceholder>
+            </div>
+            
+            <div id="navigation">
+               
+                <footer class="main-footer">
+                <!-- To the right -->
+                <div class="pull-right hidden-xs">
+                  Anything you want
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+              </footer>
+                <aside class="control-sidebar control-sidebar-dark">
 
-    <!-- Main content -->
-    <section class="content container-fluid">
-
-     
-    
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
       <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
@@ -373,58 +369,11 @@
       <!-- /.tab-pane -->
     </div>
   </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-        </div>
-        
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - MODEL</p>
-            </footer>
-        </div>
-		
-		<asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                <div class="control-sidebar-bg"></div>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server">MODEL</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/TicketCreation">Add Ticket</a></li>
-                        <li><a runat="server" href="~/CustomerCreation">Add Customer</a></li>
-                        <li><a runat="server" href="~/Tool">Assessment Tool</a></li>
-                        <li class="user" style="float: right;"><a runat="server" id="userName" href="~/">Home</a></li>
-                    </ul>
-                </div>
+               
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - MODEL</p>
-            </footer>
-        </div>
-
-    </form>
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="Scripts/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="admin-lte/js/adminlte.min.js"></script>
+        </form>
+   
 </body>
-</html>
+    </html>
