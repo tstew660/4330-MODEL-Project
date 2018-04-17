@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Queue>
-  <Ticket description="LAN" owner="Jims Company" difficulty="2" status="Open" submittedBy="John Manager" hours="60" id="0" old="true" dateCreated="2018-04-17" dateOpened="2018-04-17" timeCreated="11:34" timeOpened="12:23" emergency="false" />
-  <Ticket description="Network Overhaul" owner="Sams Company" difficulty="2" status="Open" submittedBy="Emily Smith" hours="20" id="1" old="true" dateCreated="2018-04-17" dateOpened="2018-04-17" timeCreated="11:38" timeOpened="11:40" emergency="false" />
-  <Ticket description="LAN" owner="Bills Company" difficulty="3" status="Open" submittedBy="John Manager" hours="70" id="2" old="false" dateCreated="2018-04-17" dateOpened="waiting" timeCreated="11:58" timeOpened="waiting" emergency="false" />
-  <Ticket description="Network" owner="Freds Company" difficulty="1" status="Open" submittedBy="Emily Smith" hours="30" id="3" old="true" dateCreated="2018-04-17" dateOpened="2018-04-17" timeCreated="11:59" timeOpened="11:59" emergency="false" />
-  <Ticket description="Test" owner="Sams Company" difficulty="2" status="Open" submittedBy="John Manager" hours="30" id="4" old="true" dateCreated="2018-04-17" dateOpened="2018-04-17" timeCreated="12:23" timeOpened="12:30" emergency="false" />
-  <Ticket description="Test" owner="Sams Company" difficulty="3" status="Open" submittedBy="Ronald Smith" hours="50" id="5" old="false" dateCreated="2018-04-17" dateOpened="waiting" timeCreated="12:23" timeOpened="waiting" emergency="false" />
+  <Ticket description="A" owner="Jims Company" difficulty="1" status="Open" submittedBy="John Manager" hours="60" id="0" old="true" dateCreated="2018-04-17" dateOpened="2018-04-17" timeCreated="12:57" timeOpened="12:58" emergency="false" />
+  <Ticket description="B" owner="Jills Company" difficulty="3" status="Open" submittedBy="Emily Smith" hours="40" id="1" old="true" dateCreated="2018-04-17" dateOpened="2018-04-17" timeCreated="12:57" timeOpened="12:58" emergency="false" />
+  <Ticket description="A" owner="Bobs Company" difficulty="3" status="Open" submittedBy="John Manager" hours="60" id="2" old="false" dateCreated="2018-04-17" dateOpened="waiting" timeCreated="12:59" timeOpened="waiting" emergency="false" />
 </Queue>
