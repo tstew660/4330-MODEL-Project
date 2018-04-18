@@ -19,8 +19,8 @@
         <div class="box-body table-responsive no-padding">
    
   
-        <asp:Table runat="server" ID="Queue" CssClass="table table-hover">
-        <asp:TableRow CssClass="queuerow" ID="HeaderRow" runat="server" Font-Bold="True" HorizontalAlign="Center" VerticalAlign="Bottom">
+        <asp:Table runat="server" ID="Queue" class="table table-hover" HorizontalAlign="Center">
+        <asp:TableRow ID="HeaderRow" runat="server" Font-Bold="true" HorizontalAlign="Center" VerticalAlign="Bottom">
             <asp:TableCell runat="server" ID="Priority" Text="Priority" />
             <asp:TableCell runat="server" ID="Owmer" Text="Owner" />
             <asp:TableCell runat="server" ID="Difficulty" Text="Difficulty" />
@@ -32,6 +32,7 @@
        </asp:TableRow>
             </asp:Table>
         </div>
+       
         </div>
           </div>
 

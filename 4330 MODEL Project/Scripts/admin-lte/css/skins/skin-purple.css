@@ -3,23 +3,21 @@
  * ------------
  */
 .skin-purple .main-header .navbar {
-    background: #6A16A8;
-    background: linear-gradient(to right bottom, #6A16A8, #396BFF);
+  background-color: #605ca8;
 }
 .skin-purple .main-header .navbar .nav > li > a {
   color: #ffffff;
 }
-    .skin-purple .main-header .navbar .nav > li > a:hover,
-    .skin-purple .main-header .navbar .nav > li > a:active,
-    .skin-purple .main-header .navbar .nav > li > a:focus,
-    .skin-purple .main-header .navbar .nav .open > a,
-    .skin-purple .main-header .navbar .nav .open > a:hover,
-    .skin-purple .main-header .navbar .nav .open > a:focus,
-    .skin-purple .main-header .navbar .nav > .active > a {
-        background: #6A16A8;
-        background: linear-gradient(to right bottom, #6A16A8, #396BFF);
-        color: #f6f6f6;
-    }
+.skin-purple .main-header .navbar .nav > li > a:hover,
+.skin-purple .main-header .navbar .nav > li > a:active,
+.skin-purple .main-header .navbar .nav > li > a:focus,
+.skin-purple .main-header .navbar .nav .open > a,
+.skin-purple .main-header .navbar .nav .open > a:hover,
+.skin-purple .main-header .navbar .nav .open > a:focus,
+.skin-purple .main-header .navbar .nav > .active > a {
+  background: rgba(0, 0, 0, 0.1);
+  color: #f6f6f6;
+}
 .skin-purple .main-header .navbar .sidebar-toggle {
   color: #ffffff;
 }
