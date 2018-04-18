@@ -13,22 +13,13 @@ namespace _4330_MODEL_Project {
     public partial class SiteMaster {
         
         /// <summary>
-        /// A1 control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
-        
-        /// <summary>
-        /// userName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor userName;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor username;
         
         /// <summary>
         /// MainContent control.
