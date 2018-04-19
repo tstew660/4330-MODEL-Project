@@ -2,9 +2,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
       
       <div class="col-xs-12">
-    <div class="box">
-        <div class="box-header">
-              <h3 class="box-title">Ticket Queue</h3>
+    <div class="box " style:"border-top: none;">
+
+      <div class="box-header with-border" style="border-bottom: 3px solid rgb(209, 209, 209);">
+              <h3 class="box-title" style="font-weight:800;">Ticket Queue</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">

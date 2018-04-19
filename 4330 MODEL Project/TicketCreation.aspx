@@ -10,46 +10,78 @@
             alert("Ticket could not be created");
         }
     </script>
-    &nbsp;
-    <p>Select Customer</p>
-    <div>
-        
-    <asp:DropDownList runat="server" ID="Owner" DataSourceID="Customers" DataTextField="name" DataValueField="name" OnDataBound="insertInitialCust"></asp:DropDownList>
-        </div>
-    &nbsp;
-    <p>Select Difficulty</p>
-    <div>
-        
-     <asp:DropDownList runat="server" ID="Difficulty"></asp:DropDownList>
-        </div>
-    &nbsp;
-    <p>Select Status</p>
-    <div>
-        
-     <asp:DropDownList runat="server" ID="Status"></asp:DropDownList>
-        </div>
-    &nbsp;
-    <p>Select Technician</p>
-    <div>
-        
-     <asp:DropDownList runat="server" ID="Technician" DataSourceID="Techs" DataTextField="name" DataValueField="name"  OnDataBound="insertInitialTech"></asp:DropDownList>
-        <asp:XmlDataSource ID="Techs" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
-        </div>
-    &nbsp;
-    <p>Enter Estimated Hours for Completion</p>
-    <div>
-        
-    <asp:TextBox runat="server" ID="Hours"></asp:TextBox>
-        </div>
-    &nbsp;
-    <p>Enter a Brief Description</p>
-    <div>
-       
-    <asp:TextBox runat="server" ID="Description"></asp:TextBox>
-        </div>
-    &nbsp;
+     <div class="box box-primary" style:"border-top: none;">
 
-    <asp:Button runat="server" Text="Submit" OnCommand="custSubmit"></asp:Button>
+      <div class="box-header with-border" style="border-bottom: 3px solid rgb(209, 209, 209);">
+
+        <h3 class="box-title" style="font-weight:800;">Submit New Ticket</h3>
+
+      </div>
+
+      <div class="form">
+
+        <div class="box-body">
+
+          <div class="form-group">
+
+            <label for="companyName">Technician Submitting Ticket</label>
+              <br />
+
+            <asp:DropDownList runat="server" ID="Technician" DataSourceID="Techs" DataTextField="name" DataValueField="name"  OnDataBound="insertInitialTech"></asp:DropDownList>
+
+        <asp:XmlDataSource ID="Techs" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="companyName">Select Customer</label>
+              <br />
+
+            <asp:DropDownList runat="server" ID="Owner" DataSourceID="Customers" DataTextField="name" DataValueField="name" OnDataBound="insertInitialCust"></asp:DropDownList>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="CompanyAddress">Specify Job Difficulty</label>
+              <br />
+
+            <asp:DropDownList runat="server" ID="Difficulty"></asp:DropDownList>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="companyName">Estimated Hours for Job Completion</label>
+              <br />
+
+            <asp:TextBox runat="server" ID="Hours"></asp:TextBox>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="companyName">Job Description</label>
+              <br />
+
+             <asp:TextBox runat="server" ID="Description" placeholder="Enter a brief job description"></asp:TextBox>
+
+          </div>
+
+          <div class="form-group">
+
+           
+
+            <asp:Button runat="server" Text="Submit" OnCommand="custSubmit" type="submit" class="btn btn-primary" style="width:15%; margin-top:2%; margin-left:15.5%; padding-top: 1%; padding-bottom:1%"></asp:Button>
+
+          </div>
+
+        </div>
+
+      </div>
+         
+  </div>
     
     <asp:XmlDataSource ID="Customers" runat="server" DataFile="~/Customer.xml"></asp:XmlDataSource>
 

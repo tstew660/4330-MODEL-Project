@@ -46,7 +46,7 @@ namespace _4330_MODEL_Project
             if (Description.Text == String.Empty ||
             Owner.SelectedIndex == 0 ||
             Difficulty.SelectedIndex == 0 ||
-            Status.SelectedIndex == 0 ||
+           
             Technician.SelectedIndex == 0 ||
             Hours.Text == String.Empty)
             {
@@ -62,7 +62,7 @@ namespace _4330_MODEL_Project
                 new XAttribute("description", Description.Text),
                 new XAttribute("owner", Owner.Text),
                 new XAttribute("difficulty", Difficulty.Text),
-                new XAttribute("status", "open"),
+                new XAttribute("status", "Open"),
                 new XAttribute("submittedBy", Technician.Text),
                 new XAttribute("hours", Hours.Text),
                 new XAttribute("id", id.ToString()),
@@ -90,7 +90,6 @@ namespace _4330_MODEL_Project
             Description.Text = String.Empty;
             Owner.SelectedIndex = 0;
             Difficulty.SelectedIndex = 0;
-            Status.SelectedIndex = 0;
             Technician.SelectedIndex = 0;
             Hours.Text = String.Empty;
         }

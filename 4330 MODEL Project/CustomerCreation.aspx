@@ -9,9 +9,9 @@
             alert("Customer could not be added");
         }
     </script>
-    <div class="box box-primary">
+    <div class="box box-primary" style:"border-top: none;">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border" style="border-bottom: 3px solid rgb(209, 209, 209);">
 
         <h3 class="box-title" style="font-weight:800;">Add New Customer</h3>
 
@@ -40,7 +40,7 @@
 
           <div class="form-group">
 
-            <asp:Button runat="server" Text="Submit" OnCommand="custSubmit" type="submit" class="btn btn-primary" style="width:15%; margin-top:2%; margin-left:15.5%; padding-top: 1%; padding-bottom:1%"></asp:Button>
+            <asp:Button runat="server" Text="Add Customer" OnCommand="custSubmit" type="submit" class="btn btn-primary" style="width:15%; margin-top:2%; margin-left:15.5%; padding-top: 1%; padding-bottom:1%" ></asp:Button>
 
           </div>
 
