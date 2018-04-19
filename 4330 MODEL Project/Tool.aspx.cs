@@ -54,6 +54,7 @@ namespace _4330_MODEL_Project
                         XmlElement el = (XmlElement)techs.SelectSingleNode(query1);
                         String name = el.GetAttribute("name");
                         int dailyHoursInactive = Int32.Parse(el.GetAttribute("dailyHours"));
+                        int monthHourTotals = 0;
                         String id3 = el.GetAttribute("ID");
                         TableRow row = new TableRow();
                         TableCell techIdNum = new TableCell();
@@ -67,8 +68,15 @@ namespace _4330_MODEL_Project
                         row.Cells.Add(techHoursIdleDay);
                         row.HorizontalAlign = HorizontalAlign.Center;
                         techTable.Rows.Add(row);
+                        TableRow monthRow = new TableRow();
+                        monthHourTotals += dailyHoursInactive;
+                        TableCell techHoursIdleMonth = new TableCell();
+                        techHoursIdleMonth.Text = techHoursIdleMonth.ToString();
+                        row.Cells.Add(techIdNum);
+                        row.Cells.Add(techNameFull);
+                        row.Cells.Add(techHoursIdleMonth);
                         //Added month part
-                        techMonth.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        
                         idEnd++;
                     }
                     techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));

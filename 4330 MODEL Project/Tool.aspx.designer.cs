@@ -112,15 +112,6 @@ namespace _4330_MODEL_Project {
         protected global::System.Web.UI.WebControls.DropDownList queueOver;
         
         /// <summary>
-        /// CustomerNameMonth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CustomerNameMonth;
-        
-        /// <summary>
         /// waitTimeMonth control.
         /// </summary>
         /// <remarks>
@@ -157,12 +148,48 @@ namespace _4330_MODEL_Project {
         protected global::System.Web.UI.WebControls.Label queuePercentMonth;
         
         /// <summary>
-        /// techMonth control.
+        /// monthHours control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label techMonth;
+        protected global::System.Web.UI.WebControls.Table monthHours;
+        
+        /// <summary>
+        /// monthHoursHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow monthHoursHead;
+        
+        /// <summary>
+        /// monthTechID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell monthTechID;
+        
+        /// <summary>
+        /// monthTechName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell monthTechName;
+        
+        /// <summary>
+        /// monthTechHours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell monthTechHours;
     }
 }
