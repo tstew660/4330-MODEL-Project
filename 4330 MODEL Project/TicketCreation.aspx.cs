@@ -13,16 +13,18 @@ namespace _4330_MODEL_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Difficulty.Items.Insert(0, new ListItem("Select Job Difficulty", ""));
-            Difficulty.Items.Insert(1, new ListItem("1", "1"));
-            Difficulty.Items.Insert(2, new ListItem("2", "2"));
-            Difficulty.Items.Insert(3, new ListItem("3", "3"));
+            if (!IsPostBack)
+            {
+                Difficulty.Items.Insert(0, new ListItem("Select Job Difficulty", ""));
+                Difficulty.Items.Insert(1, new ListItem("1", "1"));
+                Difficulty.Items.Insert(2, new ListItem("2", "2"));
+                Difficulty.Items.Insert(3, new ListItem("3", "3"));
 
-           // Status.Items.Insert(0, new ListItem("Select a Ticket Status", ""));
-           // Status.Items.Insert(1, new ListItem("Open", "Open"));
-           // Status.Items.Insert(2, new ListItem("Closed", "Closed"));
+                // Status.Items.Insert(0, new ListItem("Select a Ticket Status", ""));
+                // Status.Items.Insert(1, new ListItem("Open", "Open"));
+                // Status.Items.Insert(2, new ListItem("Closed", "Closed"));
 
-            
+            }
 
 
         }
