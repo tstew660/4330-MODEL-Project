@@ -22,16 +22,7 @@
 
         <div class="box-body">
 
-          <div class="form-group">
-
-            <label for="companyName">Technician Submitting Ticket</label>
-              <br />
-
-            <asp:DropDownList runat="server" ID="Technician" DataSourceID="Techs" DataTextField="name" DataValueField="name"  OnDataBound="insertInitialTech"></asp:DropDownList>
-
-        <asp:XmlDataSource ID="Techs" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
-
-          </div>
+          
 
           <div class="form-group">
 

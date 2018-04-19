@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_4330_MODEL_Project.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
+     <script>
+        
+        function popDeny()
+        {
+            alert("Password is incorrect");
+        }
+    </script>
     <h3>Employee Login</h3>
     
      <div class="container" style="text-align:center;">
@@ -11,7 +17,7 @@
          <asp:XmlDataSource ID="username" runat="server" DataFile="~/Technician.xml"></asp:XmlDataSource>
          <br/>
     <label for="psw" ><b>Password</b></label>
-    <asp:textbox runat="server" ID="pass" placeholder="Enter Password" name="psw"  style="width:20%; font-family: inherit;
+    <asp:textbox runat="server" ID="pass" placeholder="Enter Password" TextMode="Password" name="psw"  style="width:20%; font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     margin-left: 2%;

@@ -184,7 +184,7 @@
           
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a runat="server" href="~/Login" data-toggle="control-sidebar" style="font-weight:700;"><i class="fa fa-sign-out"></i>Logout</a>
+            <a runat="server" href="~/Login" style="font-weight:700;"><i class="fa fa-sign-out"></i>Logout</a>
           </li>
         </ul>
       </div>

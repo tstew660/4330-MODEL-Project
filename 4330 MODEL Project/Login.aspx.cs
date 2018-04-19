@@ -31,15 +31,23 @@ namespace _4330_MODEL_Project
         protected void onButtonSubmit(object sender, EventArgs e)
         {
             String currentUser = userField.Text;
-            
+
             techs.Load(HttpContext.Current.Server.MapPath("~/Technician.xml"));
             string query = string.Format("//*[@name='{0}']", currentUser);
+
             XmlElement node = (XmlElement)techs.SelectSingleNode(query);
             node.SetAttribute("loggedIn", "true");
-            techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
-            Response.Redirect("Default.aspx");
+            String password = node.GetAttribute("pass");
+            if (password == pass.Text)
+            {
+                techs.Save(HttpContext.Current.Server.MapPath("~/Technician.xml"));
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "popDeny()", true);
+            }
         }
-
 
     }
 }

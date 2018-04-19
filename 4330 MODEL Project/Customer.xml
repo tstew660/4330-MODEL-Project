@@ -7,4 +7,5 @@
   <Customer name="Bills Company" address="483 North Ave." priority="0" jobCount="0" />
   <Customer name="Freds Company" address="132 Road" priority="0" jobCount="0" />
   <Customer name="Carolines Company" address="4927 Apple st." priority="0" jobCount="0" />
+  <Customer name="Graces Company" address="547 Lee way" priority="0" jobCount="0" />
 </Customers>

@@ -6,7 +6,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua" style="height:85%">
             <div class="inner">
-                 <asp:Label runat="server" ID="avgTime" Text="hold" style="font-size: 38px;
+                 <asp:Label runat="server" ID="avgTime" Text="00:00:00" style="font-size: 38px;
     font-weight: bold;
     margin: 0 0 10px 0;
     padding: 0;"></asp:Label>
@@ -20,7 +20,7 @@
           <!-- small box -->
           <div class="small-box bg-green" style="height:85%; background-color:#0932bd !important;">
             <div class="inner">
-              <asp:Label runat="server" ID="jobsLeftOverDay" Text="hold" style="font-size: 38px;
+              <asp:Label runat="server" ID="jobsLeftOverDay" Text="0" style="font-size: 38px;
     font-weight: bold;
     margin: 0 0 10px 0;
     padding: 0;"></asp:Label>
@@ -33,7 +33,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow" style="height:85%; background-color:#5809bd !important;">
             <div class="inner">
-              <asp:Label runat="server" ID="queueLeng" Text="hold" style="font-size: 38px;
+              <asp:Label runat="server" ID="queueLeng" Text="0" style="font-size: 38px;
     font-weight: bold;
     margin: 0 0 10px 0;
     padding: 0;"></asp:Label>
@@ -48,7 +48,7 @@
           <!-- small box -->
           <div class="small-box bg-red" style="height:85%; background-color:#8c07b3 !important;">
             <div class="inner">
-                 <asp:Label runat="server" ID="emptyQ" Text="hold" style="font-size: 38px;
+                 <asp:Label runat="server" ID="emptyQ" Text="0" style="font-size: 38px;
     font-weight: bold;
     margin: 0 0 10px 0;
     padding: 0;"></asp:Label>
@@ -94,11 +94,11 @@
         </div>
           </div>
    
-  
+  <div style="margin-left:350px;">
             <asp:Label ID="tech" runat="server"></asp:Label>
             <asp:DropDownList runat="server" ID="queueOver" ></asp:DropDownList>
             <asp:Button runat="server" Text="Override" OnClick="ManagerOverride"></asp:Button>
-
+    </div>
             
             <h2>Monthly Summary</h2>
             <asp:Label ID="CustomerNameMonth" runat="server"></asp:Label>
