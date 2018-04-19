@@ -5,6 +5,7 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
@@ -12,11 +13,33 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+   <!-- <webopt:bundlereference runat="server" path="~/Content/css" />-->
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="admin-lte/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="admin-lte/css/skins/skin-purple.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400,600,700,300italic,400italic,600italic">
 
 </head>
-<body>
+<body class="fixed skin-purple sidebar-mini">
+    <div class="wrapper">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -38,39 +61,202 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+         
+            <header class="main-header">
+ 
+     <!-- Logo -->
+     <a href="index2.html" class="logo" style="background: #6A16A8">
+       <!-- mini logo for sidebar mini 50x50 pixels -->
+       <span class="logo-mini"><b>M inc.</b></span>
+       <!-- logo for regular state and mobile devices -->
+       <span class="logo-lg"><b>MODEL</b>inc.</span>
+     </a>
+ 
+     <!-- Header Navbar -->
+     <nav class="navbar navbar-static-top" role="navigation" style="background: #6A16A8;
+        background: linear-gradient(60deg, #6A16A8, #396BFF);">
+       <!-- Sidebar toggle button-->
+       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+         <span class="sr-only">Toggle navigation</span>
+       </a>
+       <!-- Navbar Right Menu -->
+       <div class="navbar-custom-menu">
+         <ul class="nav navbar-nav">
+           <!-- Messages: style can be found in dropdown.less-->
+           <li class="dropdown messages-menu">
+             <!-- Menu toggle button -->
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <i class="fa fa-envelope-o"></i>
+               <span class="label label-success">4</span>
+             </a>
+             <ul class="dropdown-menu">
+               <li class="header">You have 4 messages</li>
+               <li>
+                 <!-- inner menu: contains the messages -->
+                 <ul class="menu">
+                   <li><!-- start message -->
+                     <a href="#">
+                       <div class="pull-left">
+                         <!-- User Image -->
+                         <img src="admin-lte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                       </div>
+                       <!-- Message title and timestamp -->
+                       <h4>
+                         Support Team
+                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                       </h4>
+                       <!-- The message -->
+                       <p>Why not buy a new awesome theme?</p>
+                     </a>
+                   </li>
+                   <!-- end message -->
+                 </ul>
+                 <!-- /.menu -->
+               </li>
+               <li class="footer"><a href="#">See All Messages</a></li>
+             </ul>
+           </li>
+           <!-- /.messages-menu -->
+ 
+           <!-- Notifications Menu -->
+           <li class="dropdown notifications-menu">
+             <!-- Menu toggle button -->
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <i class="fa fa-bell-o"></i>
+               <span class="label label-warning">10</span>
+             </a>
+             <ul class="dropdown-menu">
+               <li class="header">You have 10 notifications</li>
+               <li>
+                 <!-- Inner Menu: contains the notifications -->
+                 <ul class="menu">
+                   <li><!-- start notification -->
+                     <a href="#">
+                       <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                     </a>
+                   </li>
+                   <!-- end notification -->
+                 </ul>
+               </li>
+               <li class="footer"><a href="#">View all</a></li>
+             </ul>
+           </li>
+           <!-- Tasks Menu -->
+           <li class="dropdown tasks-menu">
+             <!-- Menu Toggle Button -->
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <i class="fa fa-flag-o"></i>
+               <span class="label label-danger">9</span>
+             </a>
+             <ul class="dropdown-menu">
+               <li class="header">You have 9 tasks</li>
+               <li>
+                 <!-- Inner menu: contains the tasks -->
+                 <ul class="menu">
+                   <li><!-- Task item -->
+                     <a href="#">
+                       <!-- Task title and progress text -->
+                       <h3>
+                         Design some buttons
+                         <small class="pull-right">20%</small>
+                       </h3>
+                       <!-- The progress bar -->
+                       <div class="progress xs">
+                         <!-- Change the css width attribute to simulate progress -->
+                         <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                              aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                           <span class="sr-only">20% Complete</span>
+                         </div>
+                       </div>
+                     </a>
+                   </li>
+                   <!-- end task item -->
+                 </ul>
+               </li>
+               <li class="footer">
+                 <a href="#">View all tasks</a>
+               </li>
+             </ul>
+           </li>
+          
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+             <aside class="main-sidebar" style="background: #6A16A8;
+        background: linear-gradient( #6A16A8 60%, #396BFF);">
 
-        <div style="background-color: lightsteelblue; border-color: lightsteelblue;" class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a style="font-family:Impact; color: orangered; font-size: 20px" class="navbar-brand" runat="server">MODEL inc.</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a style="color: black;" runat="server" href="~/">Home</a></li>
-                        <li><a style="color: black;" runat="server" href="~/TicketCreation">Add Ticket</a></li>
-                        <li><a style="color: black;" runat="server" href="~/CustomerCreation">Add Customer</a></li>
-                        <li><a style="color: black;" runat="server" href="~/Tool">Assessment Tool</a></li>
-                        <li style="position: relative; float: right;" class="user"><a style="color: black;" runat="server" id="userName" href="#"></a></li>
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+         <!-- Sidebar user panel (optional) -->
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="admin-lte/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+    
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="user"><a runat="server" id="username" href="#"></a></li>
+        <!-- Optionally, you can add icons to the links -->
+        <li class="active"><a runat="server" href="~/Default"><i class="fa fa-link"></i> <span>Home</span></a></li>
+        <li><a runat="server" href="~/TicketCreation"><i class="fa fa-link"></i> <span>Add Ticket</span></a></li>
+        <li><a runat="server" href="~/CustomerCreation"><i class="fa fa-link"></i> <span>Add Customer</span></a></li>
+        <li class="treeview">
+          <a href="~/Tool"><i class="fa fa-link"></i> <span>Assessment Tool</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a runat="server" href="~/Tool">Daily Summary</a></li>
+            <li><a runat="server" href="~/Tool">Monthly Report</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+             <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a style="color: black;" runat="server" href="~/">Home</a></li>
+                            <li><a style="color: black;" runat="server" href="~/TicketCreation">Add Ticket</a></li>
+                            <li><a style="color: black;" runat="server" href="~/CustomerCreation">Add Customer</a></li>
+                            <li><a style="color: black;" runat="server" href="~/Tool">Assessment Tool</a></li>
+                          
                         
-                    </ul>
-                    <p><a style="color: black; float: right; margin-top: 15px;" runat="server" href="~/Login">Logout</a></p>
-                </div>
+                        </ul>
+                        <p><a style="color: black; float: right; margin-top: 15px;" runat="server" href="~/Login">Logout</a></p>
+                    </div>
+          <div class ="content-wrapper">
+           <div class="container body-content" style="width:auto">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+               
+                <hr />
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - MODEL</p>
+                </footer>
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - MODEL</p>
-            </footer>
-        </div>
-
+       </div>
     </form>
+     </div>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="admin-lte/js/adminlte.min.js"></script>
+
 </body>
 </html>
