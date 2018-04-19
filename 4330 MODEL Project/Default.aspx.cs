@@ -182,6 +182,7 @@ namespace _4330_MODEL_Project
                 row.Cells.Add(hours);
                 row.Cells.Add(description);
                 row.Cells.Add(accept);
+                row.HorizontalAlign = HorizontalAlign.Center;
                 Queue.Rows.Add(row);
                 buttonID++;
             }
