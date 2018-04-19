@@ -13,57 +13,93 @@ namespace _4330_MODEL_Project {
     public partial class Receipt1 {
         
         /// <summary>
-        /// form1 control.
+        /// receiptDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label receiptDate;
         
         /// <summary>
-        /// CustomerName control.
+        /// receiptCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CustomerName;
+        protected global::System.Web.UI.WebControls.Label receiptCustomer;
         
         /// <summary>
-        /// Description control.
+        /// jobNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Description;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell jobNum;
         
         /// <summary>
-        /// Hours control.
+        /// receiptTech control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Hours;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell receiptTech;
         
         /// <summary>
-        /// Tech control.
+        /// receiptHours control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Tech;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell receiptHours;
         
         /// <summary>
-        /// Cost control.
+        /// receiptDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Cost;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell receiptDesc;
+        
+        /// <summary>
+        /// total1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell total1;
+        
+        /// <summary>
+        /// total2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell total2;
+        
+        /// <summary>
+        /// total3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell total3;
+        
+        /// <summary>
+        /// Customers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource Customers;
     }
 }

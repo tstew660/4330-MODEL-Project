@@ -13,58 +13,85 @@ namespace _4330_MODEL_Project {
     public partial class About {
         
         /// <summary>
-        /// form1 control.
+        /// avgTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form1;
+        protected global::System.Web.UI.WebControls.Label avgTime;
         
         /// <summary>
-        /// CustomerName control.
+        /// jobsLeftOverDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CustomerName;
+        protected global::System.Web.UI.WebControls.Label jobsLeftOverDay;
         
         /// <summary>
-        /// waitTime control.
+        /// queueLeng control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label waitTime;
+        protected global::System.Web.UI.WebControls.Label queueLeng;
         
         /// <summary>
-        /// jobsLeft control.
+        /// emptyQ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label jobsLeft;
+        protected global::System.Web.UI.WebControls.Label emptyQ;
         
         /// <summary>
-        /// queueLength control.
+        /// techTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label queueLength;
+        protected global::System.Web.UI.WebControls.Table techTable;
         
         /// <summary>
-        /// queuePercent control.
+        /// HeaderRow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label queuePercent;
+        protected global::System.Web.UI.WebControls.TableRow HeaderRow;
+        
+        /// <summary>
+        /// techID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell techID;
+        
+        /// <summary>
+        /// techWName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell techWName;
+        
+        /// <summary>
+        /// idleTbleHours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell idleTbleHours;
         
         /// <summary>
         /// tech control.

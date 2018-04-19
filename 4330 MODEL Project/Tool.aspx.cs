@@ -22,9 +22,9 @@ namespace _4330_MODEL_Project
             if (!IsPostBack)
             {
                 populateDropDown();
-                waitTime.Text = AssessmentTool.avgWaitTime;
-                queueLength.Text = AssessmentTool.queueLengthDay;
-                queuePercent.Text = AssessmentTool.queuePerDay;
+                avgTime.Text = AssessmentTool.avgWaitTime;
+                queueLeng.Text = AssessmentTool.queueLengthDay;
+                emptyQ.Text = AssessmentTool.queuePerDay;
                 waitTimeMonth.Text = AssessmentTool.queueWaitMon;
                 queueLengthMonth.Text = AssessmentTool.queueLenMon;
                 queuePercentMonth.Text = AssessmentTool.queuePerMon;
@@ -54,7 +54,19 @@ namespace _4330_MODEL_Project
                         XmlElement el = (XmlElement)techs.SelectSingleNode(query1);
                         String name = el.GetAttribute("name");
                         int dailyHoursInactive = Int32.Parse(el.GetAttribute("dailyHours"));
-                        tech.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
+                        String id3 = el.GetAttribute("ID");
+                        TableRow row = new TableRow();
+                        TableCell techIdNum = new TableCell();
+                        TableCell techNameFull = new TableCell();
+                        TableCell techHoursIdleDay = new TableCell();
+                        techNameFull.Text = name;
+                        techIdNum.Text = id3;
+                        techHoursIdleDay.Text = dailyHoursInactive.ToString();
+                        row.Cells.Add(techIdNum);
+                        row.Cells.Add(techNameFull);
+                        row.Cells.Add(techHoursIdleDay);
+                        row.HorizontalAlign = HorizontalAlign.Center;
+                        techTable.Rows.Add(row);
                         //Added month part
                         techMonth.Text += name + "   " + dailyHoursInactive + System.Environment.NewLine;
                         idEnd++;
@@ -80,7 +92,7 @@ namespace _4330_MODEL_Project
                             if (created != opened)
                             {
                                 jobsLeftOver++;
-                                jobsLeft.Text = jobsLeftOver + " job(s) were not addressed the day they were submitted.";
+                                jobsLeftOverDay.Text = jobsLeftOver.ToString();
                                 //Added month part
                                 jobsLeftMonth.Text = jobsLeftOver + " job(s) were not addressed the day they were submitted.";
                             }

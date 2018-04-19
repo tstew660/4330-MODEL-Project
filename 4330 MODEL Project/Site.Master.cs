@@ -19,11 +19,13 @@ namespace _4330_MODEL_Project
             try
             {
                 XmlElement el = (XmlElement)techs.SelectSingleNode(query);
+                userNameDisplay.Text = el.GetAttribute("name");
                // userName.InnerText = el.GetAttribute("name");
             }
             catch
             {
-              //  userName.InnerText = "Not Logged In";
+                userNameDisplay.Text = "Not Logged In";
+                //  userName.InnerText = "Not Logged In";
             }
             
             
