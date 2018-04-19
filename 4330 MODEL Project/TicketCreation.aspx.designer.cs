@@ -13,33 +13,6 @@ namespace _4330_MODEL_Project {
     public partial class TicketCreation {
         
         /// <summary>
-        /// Owner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Owner;
-        
-        /// <summary>
-        /// Difficulty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Difficulty;
-        
-        /// <summary>
-        /// Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Status;
-        
-        /// <summary>
         /// Technician control.
         /// </summary>
         /// <remarks>
@@ -56,6 +29,24 @@ namespace _4330_MODEL_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.XmlDataSource Techs;
+        
+        /// <summary>
+        /// Owner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Owner;
+        
+        /// <summary>
+        /// Difficulty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Difficulty;
         
         /// <summary>
         /// Hours control.

@@ -15,6 +15,7 @@
 
    <!-- <webopt:bundlereference runat="server" path="~/Content/css" />-->
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Lilita One" rel="stylesheet" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="Content/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -69,7 +70,9 @@
        <!-- mini logo for sidebar mini 50x50 pixels -->
        <span class="logo-mini"><b>M inc.</b></span>
        <!-- logo for regular state and mobile devices -->
-       <span class="logo-lg"><b>MODEL</b>inc.</span>
+       <span class="logo-lg" style="font-family: 'Lilita One';
+    font-size: 160%;
+    letter-spacing: 1px;">MODEL</span>
      </a>
  
      <!-- Header Navbar -->
@@ -86,8 +89,8 @@
            <li class="dropdown messages-menu">
              <!-- Menu toggle button -->
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               <i class="fa fa-envelope-o"></i>
-               <span class="label label-success">4</span>
+               <i class="fa fa-envelope-o"  style="font-size:150%"></i>
+               <span class="label label-success"></span>
              </a>
              <ul class="dropdown-menu">
                <li class="header">You have 4 messages</li>
@@ -103,7 +106,7 @@
                        <!-- Message title and timestamp -->
                        <h4>
                          Support Team
-                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                         <small><i class="fa fa-clock-o"></i> </small>
                        </h4>
                        <!-- The message -->
                        <p>Why not buy a new awesome theme?</p>
@@ -122,8 +125,8 @@
            <li class="dropdown notifications-menu">
              <!-- Menu toggle button -->
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               <i class="fa fa-bell-o"></i>
-               <span class="label label-warning">10</span>
+               <i class="fa fa-bell-o"  style="font-size:150%"></i>
+               <span class="label label-warning"></span>
              </a>
              <ul class="dropdown-menu">
                <li class="header">You have 10 notifications</li>
@@ -145,8 +148,8 @@
            <li class="dropdown tasks-menu">
              <!-- Menu Toggle Button -->
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               <i class="fa fa-flag-o"></i>
-               <span class="label label-danger">9</span>
+               <i class="fa fa-flag-o"  style="font-size:150%"></i>
+               <span class="label label-danger"></span>
              </a>
              <ul class="dropdown-menu">
                <li class="header">You have 9 tasks</li>
@@ -181,7 +184,7 @@
           
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a runat="server" href="~/Login" data-toggle="control-sidebar" style="font-weight:700;"><i class="fa fa-sign-out"></i>Logout</a>
           </li>
         </ul>
       </div>
@@ -199,9 +202,12 @@
           <img src="admin-lte/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+            <asp:Label runat="server" ID="userNameDisplay" Text="User Name" style="font-size: 135%;
+    font-weight: 650;"></asp:Label>
+         <br />
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <!--  <a href="#" style="font-size: 115%;
+    font-weight: 650; margin-top:3%"><i class="fa fa-circle text-success"></i> Online</a> -->
         </div>
       </div>
 
@@ -209,20 +215,32 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="user"><a runat="server" id="username" href="#"></a></li>
+        
         <!-- Optionally, you can add icons to the links -->
-        <li><a runat="server" href="~/Default"><i class="fa fa-link"></i> <span>Home</span></a></li>
-        <li><a runat="server" href="~/TicketCreation"><i class="fa fa-link"></i> <span>Add Ticket</span></a></li>
-        <li><a runat="server" href="~/CustomerCreation"><i class="fa fa-link"></i> <span>Add Customer</span></a></li>
+        <li><a runat="server" href="~/Default"><i class="fa fa-home" style="font-size: 150%"></i> <span style="font-size: 135%;
+    font-weight: 650;
+    padding-left: 2%;">Home</span></a></li>
+        <li><a runat="server" href="~/TicketCreation"><i class="fa fa-ticket" style="font-size: 150%"></i> <span  style="font-size: 135%;
+    font-weight: 650;
+    padding-left: 2%;">Add Ticket</span></a></li>
+        <li><a runat="server" href="~/CustomerCreation"><i class="fa fa-user-plus"  style="font-size: 150%"></i> <span style="font-size: 135%;
+    font-weight: 650;
+    padding-left: 2%;">Add Customer</span></a></li>
         <li class="treeview">
-          <a href="~/Tool"><i class="fa fa-link"></i> <span>Assessment Tool</span>
+          <a href="~/Tool"><i class="fa fa-br-chart-o"  style="font-size: 150%"></i><span style="font-size: 135%;
+    font-weight: 650;
+    padding-left: 2%;">Assessment Tool</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a runat="server" href="~/Tool">Daily Summary</a></li>
-            <li><a runat="server" href="~/Tool">Monthly Report</a></li>
+            <li><a runat="server" href="~/Tool"  style="font-size:130%"><i class="fa fa-clock-o"  style="font-size: 140%;
+    font-weight: bold;
+    padding-left: 2%;"></i>Daily Summary</a></li>
+            <li><a runat="server" href="~/Tool"  style="font-size:130%"><i class="fa fa-calendar"  style="font-size: 140%;
+    font-weight: bold;
+    padding-left: 2%;"></i>Monthly Report</a></li>
           </ul>
         </li>
       </ul>
@@ -230,17 +248,11 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-             <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a style="color: black;" runat="server" href="~/">Home</a></li>
-                            <li><a style="color: black;" runat="server" href="~/TicketCreation">Add Ticket</a></li>
-                            <li><a style="color: black;" runat="server" href="~/CustomerCreation">Add Customer</a></li>
-                            <li><a style="color: black;" runat="server" href="~/Tool">Assessment Tool</a></li>
-                        </ul>
-                        <p><a style="color: black; float: right; margin-top: 15px;" runat="server" href="~/Login">Logout</a></p>
-                    </div>
+            
+                       
+                  
           <div class ="content-wrapper">
-           <div class="container body-content" style="width:auto">
+           <div class="container body-content" style="width:auto; margin:2%;">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
                

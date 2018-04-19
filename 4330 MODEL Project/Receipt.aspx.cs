@@ -29,11 +29,14 @@ namespace _4330_MODEL_Project
             int jobHoursAsInt = Int32.Parse(jobHours);
             int wageAsInt = Int32.Parse(wage);
             String cost = (jobHoursAsInt * wageAsInt).ToString();
-            CustomerName.Text = name;
-            Description.Text = description;
-            Hours.Text = jobHours;
-            Tech.Text = techName;
-            Cost.Text = "$" + cost;
+            receiptCustomer.Text = name;
+            receiptDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            receiptDesc.InnerText = description;
+            receiptHours.InnerText = jobHours;
+            receiptTech.InnerText = techName;
+            total1.InnerText = "$" + cost +".00";
+            total2.InnerText = "$" + cost + ".00";
+            total3.InnerText = "$" + cost + ".00";
         }
     }
 }
